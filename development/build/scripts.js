@@ -1,4 +1,3 @@
-const fs = require('fs')
 const gulp = require('gulp')
 const watch = require('gulp-watch')
 const pify = require('pify')
@@ -12,7 +11,8 @@ const browserify = require('browserify')
 const envify = require('loose-envify/custom')
 const sourcemaps = require('gulp-sourcemaps')
 const terser = require('gulp-terser-js')
-const { makeStringTransform } = require('browserify-transform-tools')
+const babelify = require('babelify')
+const brfs = require('brfs')
 
 const conf = require('rc')('metamask', {
   INFURA_PROJECT_ID: process.env.INFURA_PROJECT_ID,
@@ -279,16 +279,16 @@ function createScriptTasks({ browserPlatforms, livereload }) {
     }
 
     let bundler = browserify(browserifyOpts)
-      .transform(require('babelify'))
+      .transform(babelify)
       // Transpile any dependencies using the object spread/rest operator
       // because it is incompatible with `esprima`, which is used by `envify`
       // See https://github.com/jquery/esprima/issues/1927
-      .transform(require('babelify'), {
+      .transform(babelify, {
         only: ['./**/node_modules/libp2p'],
         global: true,
         plugins: ['@babel/plugin-proposal-object-rest-spread'],
       })
-      .transform(require('brfs'))
+      .transform(brfs)
 
     if (opts.buildLib) {
       bundler = bundler.require(opts.dependenciesToBundle)
