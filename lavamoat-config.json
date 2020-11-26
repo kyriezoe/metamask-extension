@@ -1101,20 +1101,6 @@
         "xtend": true
       }
     },
-    "browserify-transform-tools": {
-      "builtin": {
-        "fs": true,
-        "path": true
-      },
-      "globals": {
-        "process.cwd": true,
-        "process.nextTick": true
-      },
-      "packages": {
-        "falafel": true,
-        "through": true
-      }
-    },
     "browserslist": {
       "builtin": {
         "fs.existsSync": true,
@@ -1703,14 +1689,6 @@
         "regex-not": true,
         "snapdragon": true,
         "to-regex": true
-      }
-    },
-    "falafel": {
-      "packages": {
-        "acorn": true,
-        "foreach": true,
-        "isarray": true,
-        "object-keys": true
       }
     },
     "fancy-log": {
