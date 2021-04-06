@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 export default function ListItem({
   title,
@@ -14,22 +14,27 @@ export default function ListItem({
   className,
   'data-testid': dataTestId,
 }) {
-  const primaryClassName = classnames('list-item', className)
+  const primaryClassName = classnames('list-item', className);
 
   return (
     <div
       className={primaryClassName}
       onClick={onClick}
       data-testid={dataTestId}
+      role="button"
+      tabIndex={0}
+      onKeyPress={(event) => {
+        if (event.key === 'Enter') {
+          onClick();
+        }
+      }}
     >
       {icon && <div className="list-item__icon">{icon}</div>}
       <div className="list-item__heading">
         {React.isValidElement(title) ? (
           title
         ) : (
-          <button onClick={onClick}>
-            <h2 className="list-item__title">{title}</h2>
-          </button>
+          <h2 className="list-item__title">{title}</h2>
         )}
         {titleIcon && (
           <div className="list-item__heading-wrap">{titleIcon}</div>
@@ -42,7 +47,7 @@ export default function ListItem({
         <div className="list-item__right-content">{rightContent}</div>
       )}
     </div>
-  )
+  );
 }
 
 ListItem.propTypes = {
@@ -56,4 +61,4 @@ ListItem.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   'data-testid': PropTypes.string,
-}
+};

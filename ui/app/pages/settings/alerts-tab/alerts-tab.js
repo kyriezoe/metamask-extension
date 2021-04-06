@@ -1,18 +1,17 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
-import { ALERT_TYPES } from '../../../../../app/scripts/controllers/alert'
-import Tooltip from '../../../components/ui/tooltip'
-import ToggleButton from '../../../components/ui/toggle-button'
-import { setAlertEnabledness } from '../../../store/actions'
-import { getAlertEnabledness } from '../../../ducks/metamask/metamask'
-import { useI18nContext } from '../../../hooks/useI18nContext'
+import { ALERT_TYPES } from '../../../../../shared/constants/alerts';
+import Tooltip from '../../../components/ui/tooltip';
+import ToggleButton from '../../../components/ui/toggle-button';
+import { setAlertEnabledness } from '../../../store/actions';
+import { getAlertEnabledness } from '../../../ducks/metamask/metamask';
+import { useI18nContext } from '../../../hooks/useI18nContext';
 
 const AlertSettingsEntry = ({ alertId, description, title }) => {
-  const t = useI18nContext()
-  const dispatch = useDispatch()
-  const isEnabled = useSelector((state) => getAlertEnabledness(state)[alertId])
+  const t = useI18nContext();
+  const isEnabled = useSelector((state) => getAlertEnabledness(state)[alertId]);
 
   return (
     <>
@@ -27,28 +26,32 @@ const AlertSettingsEntry = ({ alertId, description, title }) => {
       <ToggleButton
         offLabel={t('off')}
         onLabel={t('on')}
-        onToggle={() => dispatch(setAlertEnabledness(alertId, !isEnabled))}
+        onToggle={() => setAlertEnabledness(alertId, !isEnabled)}
         value={isEnabled}
       />
     </>
-  )
-}
+  );
+};
 
 AlertSettingsEntry.propTypes = {
   alertId: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-}
+};
 
 const AlertsTab = () => {
-  const t = useI18nContext()
+  const t = useI18nContext();
 
   const alertConfig = {
     [ALERT_TYPES.unconnectedAccount]: {
       title: t('alertSettingsUnconnectedAccount'),
       description: t('alertSettingsUnconnectedAccountDescription'),
     },
-  }
+    [ALERT_TYPES.web3ShimUsage]: {
+      title: t('alertSettingsWeb3ShimUsage'),
+      description: t('alertSettingsWeb3ShimUsageDescription'),
+    },
+  };
 
   return (
     <div className="alerts-tab__body">
@@ -61,7 +64,7 @@ const AlertsTab = () => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default AlertsTab
+export default AlertsTab;

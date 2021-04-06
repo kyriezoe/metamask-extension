@@ -1,13 +1,18 @@
-import { useSelector } from 'react-redux'
-import { useRouteMatch } from 'react-router-dom'
-import { getTokens } from '../ducks/metamask/metamask'
-import { ASSET_ROUTE } from '../helpers/constants/routes'
-import { ETH_SWAPS_TOKEN_OBJECT } from '../helpers/constants/swaps'
+import { useSelector } from 'react-redux';
+import { useRouteMatch } from 'react-router-dom';
+import { getTokens } from '../ducks/metamask/metamask';
+import { getCurrentChainId } from '../selectors';
+import { ASSET_ROUTE } from '../helpers/constants/routes';
+import {
+  SWAPS_CHAINID_DEFAULT_TOKEN_MAP,
+  ETH_SWAPS_TOKEN_OBJECT,
+} from '../../../shared/constants/swaps';
 
 /**
  * Returns a token object for the asset that is currently being viewed.
- * Will return the ETH_SWAPS_TOKEN_OBJECT when the user is viewing either
- * the primary, unfiltered, activity list or the ETH asset page.
+ * Will return the default token object for the current chain when the
+ * user is viewing either the primary, unfiltered, activity list or the
+ * default token asset page.
  * @returns {import('./useTokenDisplayValue').Token}
  */
 export function useCurrentAsset() {
@@ -17,11 +22,15 @@ export function useCurrentAsset() {
     path: `${ASSET_ROUTE}/:asset`,
     exact: true,
     strict: true,
-  })
-  const tokenAddress = match?.params?.asset
-  const knownTokens = useSelector(getTokens)
+  });
+  const tokenAddress = match?.params?.asset;
+  const knownTokens = useSelector(getTokens);
   const token =
-    tokenAddress && knownTokens.find(({ address }) => address === tokenAddress)
+    tokenAddress && knownTokens.find(({ address }) => address === tokenAddress);
+  const chainId = useSelector(getCurrentChainId);
 
-  return token ?? ETH_SWAPS_TOKEN_OBJECT
+  return (
+    token ??
+    (SWAPS_CHAINID_DEFAULT_TOKEN_MAP[chainId] || ETH_SWAPS_TOKEN_OBJECT)
+  );
 }

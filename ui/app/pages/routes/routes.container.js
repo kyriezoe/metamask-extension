@@ -1,32 +1,33 @@
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
-import { compose } from 'redux'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'redux';
 import {
   getNetworkIdentifier,
   getPreferences,
+  isNetworkLoading,
   submittedPendingTransactionsSelector,
-} from '../../selectors'
+} from '../../selectors';
 import {
   hideSidebar,
   lockMetamask,
   setCurrentCurrency,
   setLastActiveTime,
   setMouseUserState,
-} from '../../store/actions'
-import { pageChanged } from '../../ducks/history/history'
-import { prepareToLeaveSwaps } from '../../ducks/swaps/swaps'
-import Routes from './routes.component'
+} from '../../store/actions';
+import { pageChanged } from '../../ducks/history/history';
+import { prepareToLeaveSwaps } from '../../ducks/swaps/swaps';
+import Routes from './routes.component';
 
 function mapStateToProps(state) {
-  const { appState } = state
+  const { appState } = state;
   const {
     sidebar,
     alertOpen,
     alertMessage,
     isLoading,
     loadingMessage,
-  } = appState
-  const { autoLockTimeLimit = 0 } = getPreferences(state)
+  } = appState;
+  const { autoLockTimeLimit = 0 } = getPreferences(state);
 
   return {
     sidebar,
@@ -37,14 +38,14 @@ function mapStateToProps(state) {
     loadingMessage,
     isUnlocked: state.metamask.isUnlocked,
     submittedPendingTransactions: submittedPendingTransactionsSelector(state),
-    network: state.metamask.network,
+    isNetworkLoading: isNetworkLoading(state),
     provider: state.metamask.provider,
     frequentRpcListDetail: state.metamask.frequentRpcListDetail || [],
     currentCurrency: state.metamask.currentCurrency,
     isMouseUser: state.appState.isMouseUser,
     providerId: getNetworkIdentifier(state),
     autoLockTimeLimit,
-  }
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -57,10 +58,10 @@ function mapDispatchToProps(dispatch) {
     setLastActiveTime: () => dispatch(setLastActiveTime()),
     pageChanged: (path) => dispatch(pageChanged(path)),
     prepareToLeaveSwaps: () => dispatch(prepareToLeaveSwaps()),
-  }
+  };
 }
 
 export default compose(
   withRouter,
   connect(mapStateToProps, mapDispatchToProps),
-)(Routes)
+)(Routes);

@@ -344,23 +344,14 @@
   "searchTokens": {
     "message": "Hledat tokeny"
   },
-  "secretPhrase": {
-    "message": "Zadejte svých 12 slov tajné fráze k obnovení trezoru."
-  },
   "seedPhraseReq": {
     "message": "klíčové fráze mají 12 slov"
-  },
-  "selectCurrency": {
-    "message": "Vybrat měnu"
   },
   "selectType": {
     "message": "Vybrat typ"
   },
   "send": {
     "message": "Odeslat"
-  },
-  "sendETH": {
-    "message": "Odeslat ETH"
   },
   "sendTokens": {
     "message": "Odeslat tokeny"
@@ -464,8 +455,5 @@
   },
   "youSign": {
     "message": "Podepisujete"
-  },
-  "yourSigRequested": {
-    "message": "Je vyžadován váš podpis"
   }
 }

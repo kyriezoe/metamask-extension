@@ -161,9 +161,6 @@
   "chainId": {
     "message": "Utambulisho wa Mnyororo"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Zogoa inapatikana kwenye mitandao ya Ethereum pekee."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Unapaswa kutumia MetaMask kwenye Google Chrome ili kuungnisha kwenye Waleti yako ya Programu Maunzi."
   },
@@ -347,9 +344,6 @@
   "endOfFlowMessage6": {
     "message": "Ikiwa unataka kuhifadhi tena kwa njia mbadla kirai chako kianzio, unaweza kukipata kwenye Mipangilio -> Usalama."
   },
-  "endOfFlowMessage7": {
-    "message": "Ikiwa una maswali au umeona kitu ambacho ni cha ulaghai, tuma barua pepe support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask haiwezi kurejesha kirai chako kianzio. Pata maelezo ziadi."
   },
@@ -391,9 +385,6 @@
   },
   "fast": {
     "message": "Haraka"
-  },
-  "faster": {
-    "message": "Ingiza"
   },
   "fileImportFail": {
     "message": "Kuhamisha faili hakufanyi kazi? Bofya hapa!",
@@ -501,9 +492,6 @@
   "importWallet": {
     "message": "Hamisha Waleti"
   },
-  "importYourExisting": {
-    "message": "Hamisha waleti iliyopo kwa kutumia kirai kianzio cha maneno 12"
-  },
   "imported": {
     "message": "Zilizoingizwa",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -565,9 +553,6 @@
   },
   "links": {
     "message": "Viungo"
-  },
-  "liveGasPricePredictions": {
-    "message": "Utabiri wa moja kwa moja wa Bei ya Gesi"
   },
   "loadMore": {
     "message": "Pak zAIDI"
@@ -762,15 +747,6 @@
   "privateNetwork": {
     "message": "Mtandao Binafsi"
   },
-  "protectYourKeys": {
-    "message": "Linda Funguo Zako!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Kuwa mwangalifu na kirai kianzio chako - kumekuwa na taarifa za tovuti ambazo zinajaribu kuiga MetaMask. MetaMask kamwe haitakuomba kirai kianzio chako!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Weka salama kirai kianzio chako. Ikiwa unaona kitu cha kilaghai, au huna uhakika na tovuti fulani, tuma barua pepe kwenda support@metamask.io"
-  },
   "queue": {
     "message": "Foleni"
   },
@@ -894,9 +870,6 @@
   "secretBackupPhraseWarning": {
     "message": "ONYO: Kamwe usiweke wazi kirai chako cha hifadhi mbadala. Mtu yeyote mwenye kirai hiki anaweza kuchukua Ether yako daima."
   },
-  "secretPhrase": {
-    "message": "Ingiza hapa kirai chako cha siri cha maneno kumi na mawili ili urejeshe vault yako."
-  },
   "securityAndPrivacy": {
     "message": "Ulinzi na Faragha"
   },
@@ -918,17 +891,11 @@
   "selectAnAccountHelp": {
     "message": "Chagua akaunti kuangalia kwenye MetaMask"
   },
-  "selectCurrency": {
-    "message": "Chagua Sarafu"
-  },
   "selectEachPhrase": {
     "message": "Tafadhali chagua kila kirai ili kuhakikisha kuwa hii ni sahihi."
   },
   "selectHdPath": {
     "message": "Chagua Njia ya HD"
-  },
-  "selectLocale": {
-    "message": "Chagua Lugha"
   },
   "selectPathHelp": {
     "message": "Ikiwa huoni akaunti zako za Leja za sasa hapa chini, charibu kubadilisha njia kwenda \"Legacy (MEW / MyCrypto)\"  "
@@ -941,9 +908,6 @@
   },
   "sendAmount": {
     "message": "Tuma Kiasi"
-  },
-  "sendETH": {
-    "message": "Tuma ETH"
   },
   "sendTokens": {
     "message": "Tuma Vianzio"
@@ -995,9 +959,6 @@
   },
   "slow": {
     "message": "Polepole"
-  },
-  "slower": {
-    "message": "Taratibu"
   },
   "somethingWentWrong": {
     "message": "Ayaa! Hitilafu fulani imetokea."
@@ -1143,9 +1104,6 @@
   "transactionSubmitted": {
     "message": "Muamala umewasilishwa ukiwa na ada ya gesi ya$1 mnamo $2."
   },
-  "transactionTime": {
-    "message": "Muda wa Muamala"
-  },
   "transactionUpdated": {
     "message": "Muamala umesasishwa mnamo $2."
   },
@@ -1248,9 +1206,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Kirai chako kianzio cha binafsi"
-  },
-  "yourSigRequested": {
-    "message": "Saini yako inaombwa"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Bei ya gesi sifuri kwenye kuongeza kasi"

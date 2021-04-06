@@ -167,9 +167,6 @@
   "chainId": {
     "message": "Идентификатор на веригата"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Диаграмата е достъпна само в мрежи на Ethereum."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "За да се свържете с хардуерния си портфейл, трябва да използвате MetaMask в Google Chrome."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "Ако отново трябва да архивирате основната си фраза, можете да я намерите в Настройки -> Защита."
   },
-  "endOfFlowMessage7": {
-    "message": "Ако имате въпроси или забележите нещо съмнително, изпратете имейл на support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask не може да възстанови ключовата Ви фраза. Научете повече."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "Бързо"
-  },
-  "faster": {
-    "message": "По-бързо"
   },
   "fileImportFail": {
     "message": "Импортирането на файл не работи? Натиснете тук!",
@@ -510,9 +501,6 @@
   "importWallet": {
     "message": "Импортиране на портфейла"
   },
-  "importYourExisting": {
-    "message": "Импортирайте съществуващия си портфейл с помощта на фраза зародиш с 12 думи"
-  },
   "imported": {
     "message": "Импортирани",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -574,9 +562,6 @@
   },
   "links": {
     "message": "Връзки"
-  },
-  "liveGasPricePredictions": {
-    "message": "Прогнози на живо за цената на газа"
   },
   "loadMore": {
     "message": "Зареди повече"
@@ -780,15 +765,6 @@
   "privateNetwork": {
     "message": "Частна мрежа"
   },
-  "protectYourKeys": {
-    "message": "Защитете ключовете си!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Внимавайте с вашата фраза - има съобщения за уебсайтове, които се опитват да имитират MetaMask. MetaMask никога няма да поиска вашата фраза-зародиш!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Пазете фразата си. Ако забележите нещо съмнително или не сте сигурни за даден уебсайт, изпратете имейл на support@metamask.io"
-  },
   "queue": {
     "message": "Опашка"
   },
@@ -912,9 +888,6 @@
   "secretBackupPhraseWarning": {
     "message": "ВНИМАНИЕ: Никога не разкривайте резервната си фраза. Всеки с тази фраза може да вземе вашия етер завинаги."
   },
-  "secretPhrase": {
-    "message": "Въведете своята тайна фраза от дванадесет думи тук, за да възстановите портфейла си."
-  },
   "securityAndPrivacy": {
     "message": "Сигурност и поверителност"
   },
@@ -936,17 +909,11 @@
   "selectAnAccountHelp": {
     "message": "Изберете акаунта за преглед в MetaMask"
   },
-  "selectCurrency": {
-    "message": "Изберете валута"
-  },
   "selectEachPhrase": {
     "message": "Моля, изберете всяка фраза, за да се уверите, че е правилна."
   },
   "selectHdPath": {
     "message": "Изберете HD Path"
-  },
-  "selectLocale": {
-    "message": "Изберете местоположение"
   },
   "selectPathHelp": {
     "message": "Ако не виждате съществуващите си акаунти в Ledger по-долу, опитайте да превключите пътеки към „Legacy (MEW / MyCrypto)“"
@@ -959,9 +926,6 @@
   },
   "sendAmount": {
     "message": "Изпратете сумата"
-  },
-  "sendETH": {
-    "message": "Изпрати ETH"
   },
   "sendTokens": {
     "message": "Изпращане на жетони"
@@ -1013,9 +977,6 @@
   },
   "slow": {
     "message": "Бавно"
-  },
-  "slower": {
-    "message": "По-бавно"
   },
   "somethingWentWrong": {
     "message": "Упс! Нещо се обърка."
@@ -1161,9 +1122,6 @@
   "transactionSubmitted": {
     "message": "Транзакция, изпратена с такса за газ от $1 при $2."
   },
-  "transactionTime": {
-    "message": "Време на транзакция"
-  },
   "transactionUpdated": {
     "message": "Транзакцията е актуализирана на $2."
   },
@@ -1266,9 +1224,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Вашата лична фраза зародиш"
-  },
-  "yourSigRequested": {
-    "message": "Изисква се вашият подпис"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Нулева цена на газ при ускоряване"

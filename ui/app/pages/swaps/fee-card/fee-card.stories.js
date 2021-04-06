@@ -1,21 +1,21 @@
-import React from 'react'
-import { action } from '@storybook/addon-actions'
-import { text } from '@storybook/addon-knobs/react'
-import FeeCard from './fee-card'
+import React from 'react';
+import { action } from '@storybook/addon-actions';
+import { text, boolean, number, object } from '@storybook/addon-knobs';
+import FeeCard from './fee-card';
 
 const tokenApprovalTextComponent = (
   <span key="swaps-view-quote-approve-symbol-1" className="view-quote__bold">
     ABC
   </span>
-)
+);
 
 const containerStyle = {
   width: '300px',
-}
+};
 
 export default {
   title: 'FeeCard',
-}
+};
 
 export const WithAllProps = () => {
   return (
@@ -35,10 +35,17 @@ export const WithAllProps = () => {
         tokenApprovalSourceTokenSymbol="ABC"
         onTokenApprovalClick={action('Clicked third row link')}
         hideTokenApprovalRow={false}
+        metaMaskFee="0.875"
+        savings={object('savings 1', { total: '8.55' })}
+        onQuotesClick={action('Clicked quotes link')}
+        numberOfQuotes={number('numberOfQuotes', 6)}
+        isBestQuote={boolean('isBestQuote', true)}
+        conversionRate={300}
+        currentCurrency="usd"
       />
     </div>
-  )
-}
+  );
+};
 
 export const WithoutThirdRow = () => {
   return (
@@ -55,10 +62,15 @@ export const WithoutThirdRow = () => {
         }}
         onFeeCardMaxRowClick={action('Clicked max fee row link')}
         hideTokenApprovalRow
+        onQuotesClick={action('Clicked quotes link')}
+        numberOfQuotes={number('numberOfQuotes', 1)}
+        isBestQuote={boolean('isBestQuote', true)}
+        savings={object('savings 1', { total: '8.55' })}
+        metaMaskFee="0.875"
       />
     </div>
-  )
-}
+  );
+};
 
 export const WithOnlyRequiredProps = () => {
   return (
@@ -70,7 +82,10 @@ export const WithOnlyRequiredProps = () => {
         }}
         onFeeCardMaxRowClick={action('Clicked max fee row link')}
         hideTokenApprovalRow
+        metaMaskFee="0.875"
+        onQuotesClick={action('Clicked quotes link')}
+        numberOfQuotes={2}
       />
     </div>
-  )
-}
+  );
+};

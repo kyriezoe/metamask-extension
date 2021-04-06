@@ -167,9 +167,6 @@
   "chainId": {
     "message": "Ahela ID"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Tabel on saadaval vaid Ethereumi võrkudes."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Riistvararahakoti ühendamiseks peate kasutama MetaMaski Google Chrome'is."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "Kui peate oma seemnefraasi uuesti varundama, leiate selle valikust Settings (Seaded) -> Security (Turvalisus)."
   },
-  "endOfFlowMessage7": {
-    "message": "Kui teil on küsimusi või näete midagi kahtlast, kirjutage meile support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask ei saa teie seemnefraasi taastada. Lisateave."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "Kiire"
-  },
-  "faster": {
-    "message": "Kiiremini"
   },
   "fileImportFail": {
     "message": "Faili importimine ei toimi? Klõpsake siia!",
@@ -510,9 +501,6 @@
   "importWallet": {
     "message": "Importige rahakott"
   },
-  "importYourExisting": {
-    "message": "Importige 12-sõnalise seemnefraasi abil olemasolev rahakott"
-  },
   "imported": {
     "message": "Imporditud",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -574,9 +562,6 @@
   },
   "links": {
     "message": "Lingid"
-  },
-  "liveGasPricePredictions": {
-    "message": "Gaasihinna prognoosid reaalajas"
   },
   "loadMore": {
     "message": "Laadi rohkem"
@@ -774,15 +759,6 @@
   "privateNetwork": {
     "message": "Privaatvõrk"
   },
-  "protectYourKeys": {
-    "message": "Kaitske oma võtmeid!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Kaitske oma seemnefraasi. Meid on teavitatud veebilehtedest, mis püüavad MetaMaski jäljendada. MetaMask ei küsi teilt kunagi teie seemnefraasi!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Kaitske oma seemnefraasi. Kui näete midagi kahtlast või pole veebilehe ehtsuses kindel, saatke e-kiri aadressile support@metamask.io"
-  },
   "queue": {
     "message": "Järjekord"
   },
@@ -906,9 +882,6 @@
   "secretBackupPhraseWarning": {
     "message": "HOIATUS! Ärge avaldage kunagi oma varundusfraasi. Selle fraasiga on võimalik teie eeter igaveseks ära võtta."
   },
-  "secretPhrase": {
-    "message": "Sisestage hoidla taastamiseks oma salajane 12-sõnaline fraas."
-  },
   "securityAndPrivacy": {
     "message": "Turvalisus ja privaatsus"
   },
@@ -930,17 +903,11 @@
   "selectAnAccountHelp": {
     "message": "Valige konto, mida MetaMaskis vaadata"
   },
-  "selectCurrency": {
-    "message": "Valitud valuuta"
-  },
   "selectEachPhrase": {
     "message": "Valige iga fraas, veendumaks, et see on õige."
   },
   "selectHdPath": {
     "message": "Valige HD-teekond"
-  },
-  "selectLocale": {
-    "message": "Valige Lokaat"
   },
   "selectPathHelp": {
     "message": "Kui te ei näe allpool oma olemasolevaid pearaamatu kontosid, vahetage tee kohta \"Legacy (MEW/MyCrypto)\""
@@ -953,9 +920,6 @@
   },
   "sendAmount": {
     "message": "Saatke kogus"
-  },
-  "sendETH": {
-    "message": "Saada ETH"
   },
   "sendTokens": {
     "message": "Saada lube"
@@ -1007,9 +971,6 @@
   },
   "slow": {
     "message": "Aeglane"
-  },
-  "slower": {
-    "message": "Aeglasem"
   },
   "somethingWentWrong": {
     "message": "Oih! Midagi läks valesti."
@@ -1155,9 +1116,6 @@
   "transactionSubmitted": {
     "message": "Tehing edastatud gaasihinnaga $1 asukohas $2."
   },
-  "transactionTime": {
-    "message": "Tehingu aeg"
-  },
   "transactionUpdated": {
     "message": "Tehing on uuendatud $2."
   },
@@ -1260,9 +1218,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Teie privaatne seemnefraas"
-  },
-  "yourSigRequested": {
-    "message": "Taotletakse teie allkirja"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Null gaasihind kiirendamisel"

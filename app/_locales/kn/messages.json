@@ -167,9 +167,6 @@
   "chainId": {
     "message": "ಚೈನ್ ID"
   },
-  "chartOnlyAvailableEth": {
-    "message": "ಎಥೆರಿಯಮ್ ನೆಟ್‌ವರ್ಕ್‌ಗಳಲ್ಲಿ ಮಾತ್ರವೇ ಚಾರ್ಟ್‌ಗಳು ಲಭ್ಯವಿರುತ್ತವೆ."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "ನಿಮ್ಮ ಹಾರ್ಡ್‌ವೇರ್ ವ್ಯಾಲೆಟ್‌ಗೆ ಸಂಪರ್ಕಪಡಿಸುವ ಸಲುವಾಗಿ Google Chrome ನಲ್ಲಿ ನಿಮಗೆ MetaMask ಅನ್ನು ಬಳಸುವ ಅಗತ್ಯವಿದೆ."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "ನಿಮ್ಮ ಸೀಡ್ ಫ್ರೇಸ್‌ನಿಂದ ಮತ್ತೊಮ್ಮೆ ನೀವು ಮತ್ತೆ ಬ್ಯಾಕಪ್ ಮಾಡಬೇಕಾದರೆ, ನೀವು ಅದನ್ನು ಸೆಟ್ಟಿಂಗ್‌ಗಳು -> ಭದ್ರತೆಯಲ್ಲಿ ಕಾಣಬಹುದು."
   },
-  "endOfFlowMessage7": {
-    "message": "ನೀವು ಎಂದಾದರೂ ಪ್ರಶ್ನೆಗಳನ್ನು ಹೊಂದಿದ್ದರೆ ಅಥವಾ ನೀವು ಯಾವಗಲಾದರೂ ಗೊಂದಲಮಯವಾಗಿದ್ದರೆ support@metamask.io ಗೆ ಇಮೇಲ್ ಮಾಡಿ."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask ಗೆ ನಿಮ್ಮ ಸೀಡ್‌ಫ್ರೇಸ್ ಮರಳಿಪಡೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ. ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "ವೇಗ"
-  },
-  "faster": {
-    "message": "ವೇಗವಾಗಿ"
   },
   "fiat": {
     "message": "ಫಿಯೆಟ್",
@@ -514,9 +505,6 @@
   "importWallet": {
     "message": "ವ್ಯಾಲೆಟ್ ಅನ್ನು ಆಮದು ಮಾಡಿ"
   },
-  "importYourExisting": {
-    "message": "12 ಪದದ ಸೀಡ್ ಫ್ರೇಸ್ ಅನ್ನು ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ವ್ಯಾಲೆಟ್ ಅನ್ನು ಆಮದು ಮಾಡಿ"
-  },
   "imported": {
     "message": "ಆಮದುಮಾಡಲಾಗಿದೆ",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -578,9 +566,6 @@
   },
   "links": {
     "message": "ಲಿಂಕ್‌ಗಳು"
-  },
-  "liveGasPricePredictions": {
-    "message": "ಲೈವ್ ಗ್ಯಾಸ್ ಬೆಲೆಯ ಭವಿಷ್ಯಗಳು"
   },
   "loadMore": {
     "message": "ಇನ್ನಷ್ಟು ಲೋಡ್ ಮಾಡಿ"
@@ -784,15 +769,6 @@
   "privateNetwork": {
     "message": "ಖಾಸಗಿ ನೆಟ್‌ವರ್ಕ್"
   },
-  "protectYourKeys": {
-    "message": "ನಿಮ್ಮ ಕೀಗಳನ್ನು ರಕ್ಷಿಸಿ!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "ನಿಮ್ಮ ಸೀಡ್ ಫ್ರೇಸ್‌ನೊಂದಿಗೆ ಜಾಗರೂಕರಾಗಿರಿ — MetaMask ಅನ್ನು ಅನುಕರಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿರುವ ವೆಬ್‌ಸೈಟ್‌ಗಳ ವರದಿಗಳಿವೆ. MetaMask ನಿಮ್ಮ ಸೀಡ್ ಫ್ರೇಸ್ ಅನ್ನು ಎಂದಿಗೂ ಕೇಳುವುದಿಲ್ಲ!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "ನಿಮ್ಮ ಫ್ರೇಸ್ ಅನ್ನು ಸುರಕ್ಷಿತವಾಗಿರಿಸಿ. ಏನಾದರೂ ಅನುಮಾನಾಸ್ಪದವಾಗಿರುವುದನ್ನು ಅಥವಾ ವೆಬ್‌ಸೈಟ್ ಕುರಿತು ನಿಮಗೆ ಅನಿಶ್ಚಿತತೆಯಿದ್ದರೆ, support@metamask.io ಗೆ ಇಮೇಲ್ ಮಾಡಿ"
-  },
   "queue": {
     "message": "ಸರತಿ"
   },
@@ -916,9 +892,6 @@
   "secretBackupPhraseWarning": {
     "message": "ಎಚ್ಚರಿಕೆ: ನಿಮ್ಮ ಬ್ಯಾಕಪ್ ಫ್ರೇಸ್ ಅನ್ನು ಎಂದಿಗೂ ಬಹಿರಗಪಡಿಸಬೇಡಿ. ಈ ಫ್ರೇಸ್ ಅನ್ನು ಹೊಂದಿರುವ ಯಾರಾದರೂ ನಿಮ್ಮ ಎಥರ್ ಅನ್ನು ಶಾಶ್ವತವಾಗಿ ತೆಗೆದುಕೊಳ್ಳಬಹುದು."
   },
-  "secretPhrase": {
-    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್ ಅನ್ನು ಮರುಸ್ಥಾಪಿಸಲು ನಿಮ್ಮ ರಹಸ್ಯ ಹನ್ನೆರಡು ಪದದ ಫ್ರೇಸ್ ಅನ್ನು ಇಲ್ಲಿ ನಮೂದಿಸಿ."
-  },
   "securityAndPrivacy": {
     "message": "ಭದ್ರತೆ ಮತ್ತು ಗೌಪ್ಯತೆ"
   },
@@ -940,17 +913,11 @@
   "selectAnAccountHelp": {
     "message": "MetaMask ನಲ್ಲಿ ವೀಕ್ಷಿಸಲು ಖಾತೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ"
   },
-  "selectCurrency": {
-    "message": "ಕರೆನ್ಸಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ"
-  },
   "selectEachPhrase": {
     "message": "ಅದು ಸರಿಯಾಗಿದೆಯೆ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಲು ದಯವಿಟ್ಟು ಪ್ರತಿ ಫ್ರೇಸ್ ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ."
   },
   "selectHdPath": {
     "message": "HD ಪಾತ್ ಆಯ್ಕೆಮಾಡಿ"
-  },
-  "selectLocale": {
-    "message": "ಪ್ರದೇಶವನ್ನು ಆಯ್ಕೆಮಾಡಿ"
   },
   "selectPathHelp": {
     "message": "ನಿಮ್ಮ ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಲೆಡ್ಜರ್ ಖಾತೆಗಳನ್ನು ನೀವು ಕೆಳಗೆ ನೋಡದಿದ್ದರೆ, ಪಾತ್‌ಗಳನ್ನು \"ಲೆಗಸಿ (MEW / MyCrypto)\" ಗೆ ಬದಲಾಯಿಸಲು ಪ್ರಯತ್ನಿಸಿ"
@@ -963,9 +930,6 @@
   },
   "sendAmount": {
     "message": "ಮೊತ್ತವನ್ನು ಕಳುಹಿಸಿ"
-  },
-  "sendETH": {
-    "message": "ETH ಕಳುಹಿಸಿ"
   },
   "sendTokens": {
     "message": "ಟೋಕನ್‌ಗಳನ್ನು ಕಳುಹಿಸಿ"
@@ -1016,9 +980,6 @@
     "message": "ಸಹಿ ಮಾಡಲಾಗಿದೆ"
   },
   "slow": {
-    "message": "ನಿಧಾನ"
-  },
-  "slower": {
     "message": "ನಿಧಾನ"
   },
   "somethingWentWrong": {
@@ -1165,9 +1126,6 @@
   "transactionSubmitted": {
     "message": "ವಹಿವಾಟನ್ನು $2 ನಲ್ಲಿ $1 ಗ್ಯಾಸ್ ಶುಲ್ಕದೊಂದಿಗೆ ರಚಿಸಲಾಗಿದೆ."
   },
-  "transactionTime": {
-    "message": "ವಹಿವಾಟು ಸಮಯ"
-  },
   "transactionUpdated": {
     "message": "$2 ನಲ್ಲಿ ವಹಿವಾಟನ್ನು ನವೀಕರಿಸಲಾಗಿದೆ."
   },
@@ -1270,9 +1228,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "ನಿಮ್ಮ ಖಾಸಗಿ ಸೀಡ್ ಫ್ರೇಸ್"
-  },
-  "yourSigRequested": {
-    "message": "ನಿಮ್ಮ ಸಹಿಯನ್ನು ವಿನಂತಿಸಲಾಗಿದೆ"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "ವೇಗ ಹೆಚ್ಚಿಸುವುದಕ್ಕೆ ಶೂನ್ಯ ಗ್ಯಾಸ್ ಬೆಲೆ"

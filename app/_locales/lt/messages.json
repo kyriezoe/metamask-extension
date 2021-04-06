@@ -167,9 +167,6 @@
   "chainId": {
     "message": "Grandinės ID"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Diagramos yra tik „Ethereum“ tinkluose."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Norėdami prisijungti prie aparatinės įrangos slaptažodinės, „MetaMask“ naudokitės „Google Chrome“ naršyklėje."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "Jeigu reikia dar kartą padaryti jūsų atkūrimo frazės kopiją, ją galite rasti pasirinkę Nuostatos -> Sauga."
   },
-  "endOfFlowMessage7": {
-    "message": "Jeigu turite klausimų arba pastebite ką nors įtartino, rašykite el. paštu support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "„MetaMask“ negali atkurti jūsų atkūrimo frazės. Sužinokite daugiau."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "Greitas"
-  },
-  "faster": {
-    "message": "Greičiau"
   },
   "fiat": {
     "message": "Standartinė valiuta",
@@ -514,9 +505,6 @@
   "importWallet": {
     "message": "Importuoti slaptažodinę"
   },
-  "importYourExisting": {
-    "message": "Importuoti turimą piniginę naudojant 12 žodžių atkūrimo frazę"
-  },
   "imported": {
     "message": "Importuota",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -578,9 +566,6 @@
   },
   "links": {
     "message": "Nuorodos"
-  },
-  "liveGasPricePredictions": {
-    "message": "Tiesioginiai dujų kainos spėjimai"
   },
   "loadMore": {
     "message": "Įkelti daugiau"
@@ -784,15 +769,6 @@
   "privateNetwork": {
     "message": "Privatus tinklas"
   },
-  "protectYourKeys": {
-    "message": "Apsaugokite savo raktus!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Saugokite savo atkūrimo frazę – gavome pranešimų apie interneto svetaines, kuriomis bandoma imituoti „MetaMask“. „MetaMask“ niekada neprašys jūsų pateikti savo atkūrimo frazę!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Saugokite savo frazę. Jei pastebėjote kažką įtartino arba nesate tikri dėl svetainės, rašykite mums adresu support@metamask.io"
-  },
   "queue": {
     "message": "Eilė"
   },
@@ -916,9 +892,6 @@
   "secretBackupPhraseWarning": {
     "message": "ĮSPĖJIMAS. Niekada neatskleiskite savo atsarginės frazės. Bet kas, žinantis šią frazę, gali visiems laikams pasiimti jūsų eterius."
   },
-  "secretPhrase": {
-    "message": "Savo saugyklai atkurti įveskite slaptą dvylikos žodžių frazę."
-  },
   "securityAndPrivacy": {
     "message": "Sauga ir privatumas"
   },
@@ -940,17 +913,11 @@
   "selectAnAccountHelp": {
     "message": "Pasirinkite paskyrą peržiūrėti „MetaMask“"
   },
-  "selectCurrency": {
-    "message": "Pasirinkite valiutą"
-  },
   "selectEachPhrase": {
     "message": "Pasirinkite kiekvieną frazę, kad patikrintumėte, ar ji tinkama"
   },
   "selectHdPath": {
     "message": "Pasirinkite HD kelią"
-  },
-  "selectLocale": {
-    "message": "Pasirinkite lokalę"
   },
   "selectPathHelp": {
     "message": "Jeigu toliau nematote savo esamų operacijų sąskaitų, mėginkite pakeisti kelius į „Legacy (MEW / MyCrypto)“"
@@ -963,9 +930,6 @@
   },
   "sendAmount": {
     "message": "Siųsti sumą"
-  },
-  "sendETH": {
-    "message": "Siųsti ETH"
   },
   "sendTokens": {
     "message": "Siųsti žetonus"
@@ -1017,9 +981,6 @@
   },
   "slow": {
     "message": "Lėtas"
-  },
-  "slower": {
-    "message": "Lėčiau"
   },
   "somethingWentWrong": {
     "message": "Vaje! Kažkas negerai."
@@ -1165,9 +1126,6 @@
   "transactionSubmitted": {
     "message": "Operacija pateikta $2 su $1 dujų mokesčiu."
   },
-  "transactionTime": {
-    "message": "Operacijos laikas"
-  },
   "transactionUpdated": {
     "message": "Operacija atnaujinta$2."
   },
@@ -1270,9 +1228,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Jūsų asmeninė atkūrimo frazė"
-  },
-  "yourSigRequested": {
-    "message": "Prašoma jūsų parašo"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Nustatykite nulinę dujų kainą greitėjant"

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import BigNumber from 'bignumber.js'
-import classnames from 'classnames'
-import { calcTokenAmount } from '../../../helpers/utils/token-util'
-import { toPrecisionWithoutTrailingZeros } from '../../../helpers/utils/util'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import BigNumber from 'bignumber.js';
+import classnames from 'classnames';
+import { calcTokenAmount } from '../../../helpers/utils/token-util';
+import { formatSwapsValueForDisplay } from '../swaps.util';
 
 export default function ExchangeRateDisplay({
   primaryTokenValue,
@@ -13,67 +13,76 @@ export default function ExchangeRateDisplay({
   secondaryTokenDecimals = 18,
   secondaryTokenSymbol,
   arrowColor = 'black',
+  boldSymbols = true,
   className,
 }) {
-  const [showPrimaryToSecondary, setShowPrimaryToSecondary] = useState(true)
-  const [rotating, setRotating] = useState(false)
+  const [showPrimaryToSecondary, setShowPrimaryToSecondary] = useState(true);
+  const [rotating, setRotating] = useState(false);
 
   const primaryTokenAmount = calcTokenAmount(
     primaryTokenValue,
     primaryTokenDecimals,
-  )
+  );
   const secondaryTokenAmount = calcTokenAmount(
     secondaryTokenValue,
     secondaryTokenDecimals,
-  )
+  );
 
   const conversionRateFromPrimaryToSecondary = new BigNumber(
     secondaryTokenAmount,
   )
     .div(primaryTokenAmount)
     .round(9)
-    .toString(10)
+    .toString(10);
   const conversionRateFromSecondaryToPrimary = new BigNumber(primaryTokenAmount)
     .div(secondaryTokenAmount)
     .round(9)
-    .toString(10)
+    .toString(10);
 
   const baseSymbol = showPrimaryToSecondary
     ? primaryTokenSymbol
-    : secondaryTokenSymbol
+    : secondaryTokenSymbol;
   const ratiodSymbol = showPrimaryToSecondary
     ? secondaryTokenSymbol
-    : primaryTokenSymbol
+    : primaryTokenSymbol;
 
   const rate = showPrimaryToSecondary
     ? conversionRateFromPrimaryToSecondary
-    : conversionRateFromSecondaryToPrimary
-  let rateToDisplay
-  let comparisonSymbol = '='
+    : conversionRateFromSecondaryToPrimary;
+  let rateToDisplay;
+  let comparisonSymbol = '=';
 
   if (new BigNumber(rate, 10).lt('0.00000001', 10)) {
-    rateToDisplay = '0.000000001'
-    comparisonSymbol = '<'
+    rateToDisplay = '0.000000001';
+    comparisonSymbol = '<';
   } else if (new BigNumber(rate, 10).lt('0.000001', 10)) {
-    rateToDisplay = rate
+    rateToDisplay = rate;
   } else {
-    rateToDisplay = toPrecisionWithoutTrailingZeros(rate, 9)
+    rateToDisplay = formatSwapsValueForDisplay(rate);
   }
 
   return (
     <div className={classnames('exchange-rate-display', className)}>
       <span>1</span>
-      <span className="exchange-rate-display__bold">{baseSymbol}</span>
+      <span
+        className={classnames({ 'exchange-rate-display__bold': boldSymbols })}
+      >
+        {baseSymbol}
+      </span>
       <span>{comparisonSymbol}</span>
       <span>{rateToDisplay}</span>
-      <span className="exchange-rate-display__bold">{ratiodSymbol}</span>
+      <span
+        className={classnames({ 'exchange-rate-display__bold': boldSymbols })}
+      >
+        {ratiodSymbol}
+      </span>
       <div
         className={classnames('exchange-rate-display__switch-arrows', {
           'exchange-rate-display__switch-arrows-rotate': rotating,
         })}
         onClick={() => {
-          setShowPrimaryToSecondary(!showPrimaryToSecondary)
-          setRotating(true)
+          setShowPrimaryToSecondary(!showPrimaryToSecondary);
+          setRotating(true);
         }}
         onAnimationEnd={() => setRotating(false)}
       >
@@ -91,7 +100,7 @@ export default function ExchangeRateDisplay({
         </svg>
       </div>
     </div>
-  )
+  );
 }
 
 ExchangeRateDisplay.propTypes = {
@@ -115,4 +124,5 @@ ExchangeRateDisplay.propTypes = {
   secondaryTokenSymbol: PropTypes.string.isRequired,
   className: PropTypes.string,
   arrowColor: PropTypes.string,
-}
+  boldSymbols: PropTypes.bool,
+};

@@ -167,9 +167,6 @@
   "chainId": {
     "message": "מזהה שרשרת"
   },
-  "chartOnlyAvailableEth": {
-    "message": "טבלה זמינה רק ברשתות אתריום."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "עליך להשתמש ב-MetaMask בגוגל כרום כדי להתחבר לארנק החומרה שלך."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "אם עליך לגבות את צירוף הגרעין שלך שוב, תוכל/י למצוא זאת בהגדרות -> אבטחה."
   },
-  "endOfFlowMessage7": {
-    "message": "אם יש לך שאלות או שנתקלת במשהו חשוד, שלח/י מייל ל- support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask לא הצליח לשחזר את ה-seedphrase שלך. למד/י עוד."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "מהיר"
-  },
-  "faster": {
-    "message": "מהר יותר"
   },
   "fiat": {
     "message": "פיאט",
@@ -514,9 +505,6 @@
   "importWallet": {
     "message": "ייבא ארנק"
   },
-  "importYourExisting": {
-    "message": "יבא/י את הארנק הקיים שלך באמצעות seed phrase בן 12 מילים"
-  },
   "imported": {
     "message": "מיובאות",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -578,9 +566,6 @@
   },
   "links": {
     "message": "קישורים"
-  },
-  "liveGasPricePredictions": {
-    "message": "תחזיות מחירי גז בשידור חי"
   },
   "loadMore": {
     "message": "טען עוד"
@@ -781,15 +766,6 @@
   "privateNetwork": {
     "message": "רשת פרטית"
   },
-  "protectYourKeys": {
-    "message": "הגנ/י על המפתחות שלך!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "יש לנקוט זהירות בנוגע לצירוף הגרעין שלך - היו דיווחים על אתרים שמנסים להתחזות ל-MetaMask .MetaMask לעולם לא תבקש את צירוף הגרעין שלך!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "יש לשמור את ה-seedphrase שלך במקום בטוח. אם את/ה רואה משהו חשוד, או שאינך בטוח/ה בנוע לאתר, שלח/י אימייל לכתובת support@metamask.io"
-  },
   "queue": {
     "message": "תור"
   },
@@ -910,9 +886,6 @@
   "secretBackupPhraseWarning": {
     "message": "אזהרה: לעולם אין לחשוף את צירוף הגיבוי שלך. כל מי שברשותו צירוף זה יכול לקחת את האת'ר שלך לצמיתות."
   },
-  "secretPhrase": {
-    "message": "הזנ/י את הצירוף הסודי שלך של שתים-עשרה המילים כאן כדי לשחזר את הכספת שלך."
-  },
   "securityAndPrivacy": {
     "message": "אבטחה ופרטיות"
   },
@@ -934,17 +907,11 @@
   "selectAnAccountHelp": {
     "message": "בחר את החשבון לצפייה ב- MetaMask"
   },
-  "selectCurrency": {
-    "message": "בחר מטבע"
-  },
   "selectEachPhrase": {
     "message": "נא לבחור כל צירוף מילים כדי להבטיח שהוא נכון."
   },
   "selectHdPath": {
     "message": "בחר/י נתיב HD"
-  },
-  "selectLocale": {
-    "message": "בחר/י מיקום"
   },
   "selectPathHelp": {
     "message": "אם אינך רואה את חשבונות ה-Ledger הקיימים שלך בהמשך, נסה/י להחליף נתיב ל-Legacy (MEW / MyCrypto)"
@@ -957,9 +924,6 @@
   },
   "sendAmount": {
     "message": "שלח סכום"
-  },
-  "sendETH": {
-    "message": "שלח/י ETH"
   },
   "sendTokens": {
     "message": "שלח טוקנים"
@@ -1011,9 +975,6 @@
   },
   "slow": {
     "message": "אטי"
-  },
-  "slower": {
-    "message": "לאט יותר"
   },
   "somethingWentWrong": {
     "message": "אופס! משהו השתבש."
@@ -1159,9 +1120,6 @@
   "transactionSubmitted": {
     "message": "עסקה הוגשה עם עמלת דלק של $1 ב-$2."
   },
-  "transactionTime": {
-    "message": "זמן העסקה"
-  },
   "transactionUpdated": {
     "message": "העסקה עודכנה ב- $2."
   },
@@ -1264,9 +1222,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "ה-seed phrase הפרטי שלך"
-  },
-  "yourSigRequested": {
-    "message": "נדרשת חתימתך"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "מחיר גז אפס על האצה"

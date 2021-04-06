@@ -1,14 +1,15 @@
-import { ETH_SWAPS_TOKEN_OBJECT } from '../../helpers/constants/swaps'
+import { ETH_SWAPS_TOKEN_OBJECT } from '../../../../shared/constants/swaps';
 
 export const TRADES_BASE_PROD_URL =
-  'https://api.metaswap.codefi.network/trades?'
-export const TOKENS_BASE_PROD_URL = 'https://api.metaswap.codefi.network/tokens'
+  'https://api.metaswap.codefi.network/trades?';
+export const TOKENS_BASE_PROD_URL =
+  'https://api.metaswap.codefi.network/tokens';
 export const AGGREGATOR_METADATA_BASE_PROD_URL =
-  'https://api.metaswap.codefi.network/aggregatorMetadata'
+  'https://api.metaswap.codefi.network/aggregatorMetadata';
 export const TOP_ASSET_BASE_PROD_URL =
-  'https://api.metaswap.codefi.network/topAssets'
+  'https://api.metaswap.codefi.network/topAssets';
 
-export const TOKENS = [
+const BASE_TOKENS = [
   {
     erc20: true,
     symbol: 'META',
@@ -81,8 +82,11 @@ export const TOKENS = [
     decimals: 8,
     address: '0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599',
   },
-  ETH_SWAPS_TOKEN_OBJECT,
-]
+];
+
+export const TOKENS = [...BASE_TOKENS, ETH_SWAPS_TOKEN_OBJECT];
+
+export const EXPECTED_TOKENS_RESULT = [ETH_SWAPS_TOKEN_OBJECT, ...BASE_TOKENS];
 
 export const MOCK_TRADE_RESPONSE_1 = [
   {
@@ -151,12 +155,12 @@ export const MOCK_TRADE_RESPONSE_1 = [
     aggregator: 'zeroEx',
     aggType: 'AGG',
   },
-]
+];
 
 export const MOCK_TRADE_RESPONSE_2 = MOCK_TRADE_RESPONSE_1.map((trade) => ({
   ...trade,
   sourceAmount: '20000000000000000',
-}))
+}));
 
 export const AGGREGATOR_METADATA = {
   agg1: {
@@ -169,7 +173,7 @@ export const AGGREGATOR_METADATA = {
     title: 'agg2',
     icon: 'data:image/png;base64,iVBORw0KGgoAAA',
   },
-}
+};
 
 export const TOP_ASSETS = [
   {
@@ -192,4 +196,4 @@ export const TOP_ASSETS = [
     symbol: 'SNX',
     address: '0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f',
   },
-]
+];

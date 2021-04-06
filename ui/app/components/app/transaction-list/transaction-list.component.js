@@ -1,78 +1,81 @@
-import React, { useMemo, useEffect, useRef, useState, useCallback } from 'react'
-import PropTypes from 'prop-types'
-import { useSelector, useDispatch } from 'react-redux'
+import React, { useMemo, useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import {
   nonceSortedCompletedTransactionsSelector,
   nonceSortedPendingTransactionsSelector,
-} from '../../../selectors/transactions'
-import { getFeatureFlags } from '../../../selectors/selectors'
-import * as actions from '../../../ducks/gas/gas.duck'
-import { useI18nContext } from '../../../hooks/useI18nContext'
-import TransactionListItem from '../transaction-list-item'
-import Button from '../../ui/button'
-import { TOKEN_CATEGORY_HASH } from '../../../helpers/constants/transactions'
-import { SWAPS_CONTRACT_ADDRESS } from '../../../helpers/constants/swaps'
-import { TRANSACTION_CATEGORIES } from '../../../../../shared/constants/transaction'
+} from '../../../selectors/transactions';
+import { getCurrentChainId } from '../../../selectors';
+import { useI18nContext } from '../../../hooks/useI18nContext';
+import TransactionListItem from '../transaction-list-item';
+import Button from '../../ui/button';
+import { TOKEN_CATEGORY_HASH } from '../../../helpers/constants/transactions';
+import { SWAPS_CHAINID_CONTRACT_ADDRESS_MAP } from '../../../../../shared/constants/swaps';
+import { TRANSACTION_TYPES } from '../../../../../shared/constants/transaction';
 
-const PAGE_INCREMENT = 10
+const PAGE_INCREMENT = 10;
 
-const getTransactionGroupRecipientAddressFilter = (recipientAddress) => {
+// When we are on a token page, we only want to show transactions that involve that token.
+// In the case of token transfers or approvals, these will be transactions sent to the
+// token contract. In the case of swaps, these will be transactions sent to the swaps contract
+// and which have the token address in the transaction data.
+//
+// getTransactionGroupRecipientAddressFilter is used to determine whether a transaction matches
+// either of those criteria
+const getTransactionGroupRecipientAddressFilter = (
+  recipientAddress,
+  chainId,
+) => {
   return ({ initialTransaction: { txParams } }) => {
     return (
       txParams?.to === recipientAddress ||
-      (txParams?.to === SWAPS_CONTRACT_ADDRESS &&
+      (txParams?.to === SWAPS_CHAINID_CONTRACT_ADDRESS_MAP[chainId] &&
         txParams.data.match(recipientAddress.slice(2)))
-    )
-  }
-}
+    );
+  };
+};
 
 const tokenTransactionFilter = ({
-  initialTransaction: {
-    transactionCategory,
-    destinationTokenSymbol,
-    sourceTokenSymbol,
-  },
+  initialTransaction: { type, destinationTokenSymbol, sourceTokenSymbol },
 }) => {
-  if (TOKEN_CATEGORY_HASH[transactionCategory]) {
-    return false
-  } else if (transactionCategory === TRANSACTION_CATEGORIES.SWAP) {
-    return destinationTokenSymbol === 'ETH' || sourceTokenSymbol === 'ETH'
+  if (TOKEN_CATEGORY_HASH[type]) {
+    return false;
+  } else if (type === TRANSACTION_TYPES.SWAP) {
+    return destinationTokenSymbol === 'ETH' || sourceTokenSymbol === 'ETH';
   }
-  return true
-}
+  return true;
+};
 
 const getFilteredTransactionGroups = (
   transactionGroups,
   hideTokenTransactions,
   tokenAddress,
+  chainId,
 ) => {
   if (hideTokenTransactions) {
-    return transactionGroups.filter(tokenTransactionFilter)
+    return transactionGroups.filter(tokenTransactionFilter);
   } else if (tokenAddress) {
     return transactionGroups.filter(
-      getTransactionGroupRecipientAddressFilter(tokenAddress),
-    )
+      getTransactionGroupRecipientAddressFilter(tokenAddress, chainId),
+    );
   }
-  return transactionGroups
-}
+  return transactionGroups;
+};
 
 export default function TransactionList({
   hideTokenTransactions,
   tokenAddress,
 }) {
-  const [limit, setLimit] = useState(PAGE_INCREMENT)
-  const t = useI18nContext()
+  const [limit, setLimit] = useState(PAGE_INCREMENT);
+  const t = useI18nContext();
 
-  const dispatch = useDispatch()
   const unfilteredPendingTransactions = useSelector(
     nonceSortedPendingTransactionsSelector,
-  )
+  );
   const unfilteredCompletedTransactions = useSelector(
     nonceSortedCompletedTransactionsSelector,
-  )
-  const { transactionTime: transactionTimeFeatureActive } = useSelector(
-    getFeatureFlags,
-  )
+  );
+  const chainId = useSelector(getCurrentChainId);
 
   const pendingTransactions = useMemo(
     () =>
@@ -80,74 +83,37 @@ export default function TransactionList({
         unfilteredPendingTransactions,
         hideTokenTransactions,
         tokenAddress,
+        chainId,
       ),
-    [hideTokenTransactions, tokenAddress, unfilteredPendingTransactions],
-  )
+    [
+      hideTokenTransactions,
+      tokenAddress,
+      unfilteredPendingTransactions,
+      chainId,
+    ],
+  );
   const completedTransactions = useMemo(
     () =>
       getFilteredTransactionGroups(
         unfilteredCompletedTransactions,
         hideTokenTransactions,
         tokenAddress,
+        chainId,
       ),
-    [hideTokenTransactions, tokenAddress, unfilteredCompletedTransactions],
-  )
-
-  const { fetchGasEstimates, fetchBasicGasAndTimeEstimates } = useMemo(
-    () => ({
-      fetchGasEstimates: (blockTime) =>
-        dispatch(actions.fetchGasEstimates(blockTime)),
-      fetchBasicGasAndTimeEstimates: () =>
-        dispatch(actions.fetchBasicGasAndTimeEstimates()),
-    }),
-    [dispatch],
-  )
-
-  // keep track of previous values from state.
-  // loaded is used here to determine if our effect has ran at least once.
-  const prevState = useRef({
-    loaded: false,
-    pendingTransactions,
-    transactionTimeFeatureActive,
-  })
-
-  useEffect(() => {
-    const { loaded } = prevState.current
-    const pendingTransactionAdded =
-      pendingTransactions.length > 0 &&
-      prevState.current.pendingTransactions.length === 0
-    const transactionTimeFeatureWasActivated =
-      !prevState.current.transactionTimeFeatureActive &&
-      transactionTimeFeatureActive
-    if (
-      transactionTimeFeatureActive &&
-      pendingTransactions.length > 0 &&
-      (loaded === false ||
-        transactionTimeFeatureWasActivated ||
-        pendingTransactionAdded)
-    ) {
-      fetchBasicGasAndTimeEstimates().then(({ blockTime }) =>
-        fetchGasEstimates(blockTime),
-      )
-    }
-    prevState.current = {
-      loaded: true,
-      pendingTransactions,
-      transactionTimeFeatureActive,
-    }
-  }, [
-    fetchGasEstimates,
-    fetchBasicGasAndTimeEstimates,
-    transactionTimeFeatureActive,
-    pendingTransactions,
-  ])
+    [
+      hideTokenTransactions,
+      tokenAddress,
+      unfilteredCompletedTransactions,
+      chainId,
+    ],
+  );
 
   const viewMore = useCallback(
     () => setLimit((prev) => prev + PAGE_INCREMENT),
     [],
-  )
+  );
 
-  const pendingLength = pendingTransactions.length
+  const pendingLength = pendingTransactions.length;
 
   return (
     <div className="transaction-list">
@@ -199,15 +165,15 @@ export default function TransactionList({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 TransactionList.propTypes = {
   hideTokenTransactions: PropTypes.bool,
   tokenAddress: PropTypes.string,
-}
+};
 
 TransactionList.defaultProps = {
   hideTokenTransactions: false,
   tokenAddress: undefined,
-}
+};

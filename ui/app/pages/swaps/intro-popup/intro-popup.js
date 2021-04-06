@@ -1,37 +1,41 @@
-import React, { useContext } from 'react'
-import { useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import { setSwapsFromToken } from '../../../ducks/swaps/swaps'
-import { I18nContext } from '../../../contexts/i18n'
-import { BUILD_QUOTE_ROUTE } from '../../../helpers/constants/routes'
-import { useNewMetricEvent } from '../../../hooks/useMetricEvent'
-import { useSwapsEthToken } from '../../../hooks/useSwapsEthToken'
-import Button from '../../../components/ui/button'
-import Popover from '../../../components/ui/popover'
+import React, { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { setSwapsFromToken } from '../../../ducks/swaps/swaps';
+import { I18nContext } from '../../../contexts/i18n';
+import { BUILD_QUOTE_ROUTE } from '../../../helpers/constants/routes';
+import { useNewMetricEvent } from '../../../hooks/useMetricEvent';
+import { getSwapsDefaultToken } from '../../../selectors';
+import Button from '../../../components/ui/button';
+import Popover from '../../../components/ui/popover';
 
 export default function IntroPopup({ onClose }) {
-  const dispatch = useDispatch(useDispatch)
-  const history = useHistory()
-  const t = useContext(I18nContext)
+  const dispatch = useDispatch(useDispatch);
+  const history = useHistory();
+  const t = useContext(I18nContext);
+
+  const swapsDefaultToken = useSelector(getSwapsDefaultToken);
   const enteredSwapsEvent = useNewMetricEvent({
     event: 'Swaps Opened',
-    properties: { source: 'Intro popup', active_currency: 'ETH' },
+    properties: {
+      source: 'Intro popup',
+      active_currency: swapsDefaultToken.symbol,
+    },
     category: 'swaps',
-  })
+  });
   const blogPostVisitedEvent = useNewMetricEvent({
     event: 'Blog Post Visited ',
     category: 'swaps',
-  })
+  });
   const contractAuditVisitedEvent = useNewMetricEvent({
     event: 'Contract Audit Visited',
     category: 'swaps',
-  })
+  });
   const productOverviewDismissedEvent = useNewMetricEvent({
     event: 'Product Overview Dismissed',
     category: 'swaps',
-  })
-  const swapsEthToken = useSwapsEthToken()
+  });
 
   return (
     <div className="intro-popup">
@@ -40,8 +44,8 @@ export default function IntroPopup({ onClose }) {
         title={t('swapIntroPopupTitle')}
         subtitle={t('swapIntroPopupSubTitle')}
         onClose={() => {
-          productOverviewDismissedEvent()
-          onClose()
+          productOverviewDismissedEvent();
+          onClose();
         }}
         footerClassName="intro-popup__footer"
         footer={
@@ -49,10 +53,10 @@ export default function IntroPopup({ onClose }) {
             type="confirm"
             className="intro-popup__button"
             onClick={() => {
-              onClose()
-              enteredSwapsEvent()
-              dispatch(setSwapsFromToken(swapsEthToken))
-              history.push(BUILD_QUOTE_ROUTE)
+              onClose();
+              enteredSwapsEvent();
+              dispatch(setSwapsFromToken(swapsDefaultToken));
+              history.push(BUILD_QUOTE_ROUTE);
             }}
           >
             {t('swapStartSwapping')}
@@ -75,8 +79,8 @@ export default function IntroPopup({ onClose }) {
               global.platform.openTab({
                 url:
                   'https://medium.com/metamask/introducing-metamask-swaps-84318c643785',
-              })
-              blogPostVisitedEvent()
+              });
+              blogPostVisitedEvent();
             }}
           >
             {t('swapIntroLearnMoreLink')}
@@ -87,8 +91,8 @@ export default function IntroPopup({ onClose }) {
               global.platform.openTab({
                 url:
                   'https://diligence.consensys.net/audits/private/lsjipyllnw2/',
-              })
-              contractAuditVisitedEvent()
+              });
+              contractAuditVisitedEvent();
             }}
           >
             {t('swapLearnMoreContractsAuditReview')}
@@ -96,9 +100,9 @@ export default function IntroPopup({ onClose }) {
         </div>
       </Popover>
     </div>
-  )
+  );
 }
 
 IntroPopup.propTypes = {
   onClose: PropTypes.func.isRequired,
-}
+};

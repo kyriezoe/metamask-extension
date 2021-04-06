@@ -1,18 +1,20 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { CHAIN_ID_TO_NETWORK_ID_MAP } from '../../../../../../shared/constants/network';
 import {
-  getCurrentNetwork,
   getSendTo,
   getSendToNickname,
   getAddressBookEntry,
-} from '../../../../selectors'
-import EnsInput from './ens-input.component'
+  getCurrentChainId,
+} from '../../../../selectors';
+import EnsInput from './ens-input.component';
 
 export default connect((state) => {
-  const selectedAddress = getSendTo(state)
+  const selectedAddress = getSendTo(state);
+  const chainId = getCurrentChainId(state);
   return {
-    network: getCurrentNetwork(state),
+    network: CHAIN_ID_TO_NETWORK_ID_MAP[chainId],
     selectedAddress,
     selectedName: getSendToNickname(state),
     contact: getAddressBookEntry(state, selectedAddress),
-  }
-})(EnsInput)
+  };
+})(EnsInput);

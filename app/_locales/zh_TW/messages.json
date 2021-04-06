@@ -26,6 +26,9 @@
   "accountSelectionRequired": {
     "message": "必須先選擇一個帳戶!"
   },
+  "activity": {
+    "message": "交易紀錄"
+  },
   "activityLog": {
     "message": "活動紀錄"
   },
@@ -69,7 +72,7 @@
     "message": "數量"
   },
   "appDescription": {
-    "message": "乙太坊瀏覽器擴充插件",
+    "message": "以太坊瀏覽器擴充插件",
     "description": "The description of the application"
   },
   "appName": {
@@ -83,6 +86,9 @@
     "message": "已批准"
   },
   "asset": {
+    "message": "資產"
+  },
+  "assets": {
     "message": "資產"
   },
   "attemptToCancel": {
@@ -146,6 +152,9 @@
   "builtInCalifornia": {
     "message": "MetaMask 是在加州設計製造"
   },
+  "buy": {
+    "message": "買"
+  },
   "buyWithWyre": {
     "message": "用 Wyre 購買 ETH"
   },
@@ -166,9 +175,6 @@
   },
   "chainId": {
     "message": "鏈 ID"
-  },
-  "chartOnlyAvailableEth": {
-    "message": "圖表僅適用於以太坊網路。"
   },
   "chromeRequiredForHardwareWallets": {
     "message": "您需要在 Google Chrome 瀏覽器使用 MetaMask 連結您的硬體錢包"
@@ -282,7 +288,7 @@
     "message": "小數點後位數至少為0, 最多為36."
   },
   "defaultNetwork": {
-    "message": "預設乙太幣交易網路為主網路"
+    "message": "預設以太幣交易網路為主網路"
   },
   "delete": {
     "message": "刪除"
@@ -297,16 +303,16 @@
     "message": "你確定要刪除網路嗎？"
   },
   "depositEther": {
-    "message": "存入乙太幣"
+    "message": "存入以太幣"
   },
   "details": {
     "message": "詳情"
   },
   "directDepositEther": {
-    "message": "直接存入乙太幣"
+    "message": "直接存入以太幣"
   },
   "directDepositEtherExplainer": {
-    "message": "如果您已經擁有乙太幣，直接存入功能是讓新錢包最快取得乙太幣的方式。"
+    "message": "如果您已經擁有以太幣，直接存入功能是讓新錢包最快取得以太幣的方式。"
   },
   "done": {
     "message": "完成"
@@ -353,9 +359,6 @@
   "endOfFlowMessage6": {
     "message": "如你需要再次備份助記詞，可至設定 -> 安全。"
   },
-  "endOfFlowMessage7": {
-    "message": "如你有任何問題或察覺有異，請寄信給 support@metamask.io"
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask 無法還原你的助記詞。暸解更多"
   },
@@ -397,9 +400,6 @@
   },
   "fast": {
     "message": "快"
-  },
-  "faster": {
-    "message": "更快"
   },
   "fiat": {
     "message": "法定貨幣",
@@ -446,10 +446,10 @@
     "message": "貨幣轉換，主要貨幣，語言，區塊鏈哈希頭像"
   },
   "getEther": {
-    "message": "取得乙太幣"
+    "message": "取得以太幣"
   },
   "getEtherFromFaucet": {
-    "message": "從水管取得 $1 乙太幣。",
+    "message": "從水管取得 $1 以太幣。",
     "description": "Displays network name for Ether faucet"
   },
   "getHelp": {
@@ -514,9 +514,6 @@
   "importWallet": {
     "message": "匯入錢包"
   },
-  "importYourExisting": {
-    "message": "使用 12 字的助記詞來匯入你現有的錢包"
-  },
   "imported": {
     "message": "已匯入私鑰",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -579,9 +576,6 @@
   "links": {
     "message": "連結"
   },
-  "liveGasPricePredictions": {
-    "message": "即時 Gas 價格預估"
-  },
   "loadMore": {
     "message": "載入更多"
   },
@@ -595,7 +589,7 @@
     "message": "鎖定"
   },
   "mainnet": {
-    "message": "乙太坊 主網路"
+    "message": "以太坊 主網路"
   },
   "max": {
     "message": "最大值"
@@ -610,7 +604,7 @@
     "message": "訊息"
   },
   "metamaskDescription": {
-    "message": "MetaMask 是乙太坊安全身份識別金庫"
+    "message": "MetaMask 是以太坊安全身份識別金庫"
   },
   "metamaskVersion": {
     "message": "MetaMask 版本"
@@ -631,14 +625,14 @@
     "message": "所有你在 MetaMask 創建的帳號將自動新增到此區塊。"
   },
   "needEtherInWallet": {
-    "message": "要使用 MetaMask 存取去中心化應用服務時，您的錢包中需要有乙太幣。"
+    "message": "要使用 MetaMask 存取去中心化應用服務時，您的錢包中需要有以太幣。"
   },
   "needImportFile": {
     "message": "您必須選擇一個檔案來匯入",
     "description": "User is important an account and needs to add a file to continue"
   },
   "negativeETH": {
-    "message": "不能送出負值的乙太幣"
+    "message": "不能送出負值的以太幣"
   },
   "networkName": {
     "message": "網路名稱"
@@ -757,7 +751,7 @@
     "message": "主要顯示"
   },
   "primaryCurrencySettingDescription": {
-    "message": "選擇使用乙太幣(ETH)或是法定貨幣(例如：美金)為主要錢幣顯示單位"
+    "message": "選擇使用以太幣(ETH)或是法定貨幣(例如：美金)為主要錢幣顯示單位"
   },
   "privacyMsg": {
     "message": "隱私政策"
@@ -771,15 +765,6 @@
   },
   "privateNetwork": {
     "message": "私有網路"
-  },
-  "protectYourKeys": {
-    "message": "保護你的鑰匙！"
-  },
-  "protectYourKeysMessage1": {
-    "message": "小心保管你的註記詞—我們接到報告有網站嘗試模仿 MetaMask。MetaMask 永遠不會詢問你的助記詞！"
-  },
-  "protectYourKeysMessage2": {
-    "message": "安全存放你的助記詞。如你察覺有異，或你對某網站起疑，請寄信給 support@metamask.io"
   },
   "queue": {
     "message": "佇列"
@@ -899,10 +884,7 @@
     "message": "助憶詞將可協助您用更簡單的方式備份帳戶資訊。"
   },
   "secretBackupPhraseWarning": {
-    "message": "警告: 絕對不要洩漏您的助憶詞。任何人只要得知助憶詞代表他可以竊取您所有的乙太幣和代幣。"
-  },
-  "secretPhrase": {
-    "message": "輸入您的12個助憶詞以回復金庫"
+    "message": "警告: 絕對不要洩漏您的助憶詞。任何人只要得知助憶詞代表他可以竊取您所有的以太幣和代幣。"
   },
   "securityAndPrivacy": {
     "message": "安全＆隱私"
@@ -922,14 +904,8 @@
   "selectAnAccount": {
     "message": "選擇帳戶"
   },
-  "selectCurrency": {
-    "message": "選擇幣別"
-  },
   "selectEachPhrase": {
     "message": "請依照正確順序點選助憶詞"
-  },
-  "selectLocale": {
-    "message": "選擇地區"
   },
   "selectPathHelp": {
     "message": "若看不到您已經擁有的 Ledger 帳戶，請嘗試切換路徑為 \"Legacy (MEW / MyCrypto)\""
@@ -943,14 +919,11 @@
   "sendAmount": {
     "message": "發送數量"
   },
-  "sendETH": {
-    "message": "發送乙太幣"
-  },
   "sendTokens": {
     "message": "發送代幣"
   },
   "sentEther": {
-    "message": "發送乙太幣"
+    "message": "發送以太幣"
   },
   "separateEachWord": {
     "message": "單詞之間請以空白間隔"
@@ -997,9 +970,6 @@
   "slow": {
     "message": "慢"
   },
-  "slower": {
-    "message": "更慢"
-  },
   "somethingWentWrong": {
     "message": "糟糕！出了點問題。"
   },
@@ -1037,7 +1007,7 @@
     "message": "3. 開始使用！"
   },
   "step3HardwareWalletMsg": {
-    "message": "使用您硬體錢包中的帳戶，與去中心化應用服務交易乙太幣、ERC20代幣、或迷戀貓等數位資產。"
+    "message": "使用您硬體錢包中的帳戶，與去中心化應用服務交易以太幣、ERC20代幣、或迷戀貓等數位資產。"
   },
   "storePhrase": {
     "message": "您可以用密碼管理系統例如 1Password 等軟體儲存助憶詞。"
@@ -1144,9 +1114,6 @@
   "transactionSubmitted": {
     "message": "交易送出 手續費 $1 時間 $2"
   },
-  "transactionTime": {
-    "message": "交易時間"
-  },
   "transactionUpdated": {
     "message": "交易狀態更新 時間 $2"
   },
@@ -1249,9 +1216,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "您的助憶詞"
-  },
-  "yourSigRequested": {
-    "message": "正在請求您的簽署"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "加速的 Gas 價格為 0"

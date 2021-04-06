@@ -167,9 +167,6 @@
   "chainId": {
     "message": "معرّف السلسلة"
   },
-  "chartOnlyAvailableEth": {
-    "message": "الرسم البياني متاح فقط على شبكات إيثيريوم."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "تحتاج إلى استخدام MetaMask على Google Chrome للاتصال بمحفظة الأجهزة الخاصة بك."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "إذا كنت بحاجة إلى عمل نسخة احتياطية من عبارة الأمان الخاصة بك مرة أخرى، يمكنك العثور عليها في الإعدادات -> الأمان."
   },
-  "endOfFlowMessage7": {
-    "message": "إذا كانت لديك أسئلة أو ترى شيئاً ما مريباً، فأرسل بريداً إلكترونياً إلى support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "لا يمكن لـ MetaMask استعادة جملتك البذرية. تعلم المزيد."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "سريع"
-  },
-  "faster": {
-    "message": "أسرع"
   },
   "fileImportFail": {
     "message": "استيراد الملف لا ينجح؟ انقر هنا!",
@@ -510,9 +501,6 @@
   "importWallet": {
     "message": "استيراد المحفظة"
   },
-  "importYourExisting": {
-    "message": "قم باستيراد محفظتك الحالية باستخدام جملة بذرية مكونة من 12 كلمة"
-  },
   "imported": {
     "message": "المستوردة",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -574,9 +562,6 @@
   },
   "links": {
     "message": "الروابط"
-  },
-  "liveGasPricePredictions": {
-    "message": "توقعات أسعار الجاس الحية"
   },
   "loadMore": {
     "message": "تحميل المزيد"
@@ -777,15 +762,6 @@
   "privateNetwork": {
     "message": "شبكة خاصة"
   },
-  "protectYourKeys": {
-    "message": "احمِ مفاتيحك!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "كن حذراً بشأن عبارة الأمان الخاصة بك - فهناك بلاغات عن مواقع ويب تحاول تقليد MetaMask. لن تسأل MetaMask عن عبارة الأمان الخاصة بك أبداً!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "أبقِ عبارة الأمان الخاصة بك بأمان. إذا رأيت شيئاً مريباً، أو كنت غير متأكد من موقع ويب ما، أرسل بريداً إلكترونياً إلى support@metamask.io"
-  },
   "queue": {
     "message": "اللائحة"
   },
@@ -909,9 +885,6 @@
   "secretBackupPhraseWarning": {
     "message": "تحذير: لا تكشف مطلقاً عن عبارة الدعم الخاصة بك. يمكن لأي شخص بهذه العبارة أن يستحوذ على الأثير الخاص بك إلى الأبد."
   },
-  "secretPhrase": {
-    "message": "أدخل جملتك السرية المكونة من اثني عشر كلمة هنا لاستعادة خزنتك."
-  },
   "securityAndPrivacy": {
     "message": "الأمن والخصوصية"
   },
@@ -933,17 +906,11 @@
   "selectAnAccountHelp": {
     "message": "حدد الحساب لعرضه في MetaMask"
   },
-  "selectCurrency": {
-    "message": "تحديد العملة"
-  },
   "selectEachPhrase": {
     "message": "يُرجى تحديد كل عبارة للتأكد من صحتها."
   },
   "selectHdPath": {
     "message": "حدد مسار HD "
-  },
-  "selectLocale": {
-    "message": "تحديد الموقع المحلي"
   },
   "selectPathHelp": {
     "message": "إذا لم تشاهد حسابات Ledger الحالية الخاصة بك أدناه، فحاول تبديل المسارات \"Legacy (MEW / MyCrypto)\""
@@ -956,9 +923,6 @@
   },
   "sendAmount": {
     "message": "إرسال المبلغ"
-  },
-  "sendETH": {
-    "message": "إرسال عملة إيثيريوم"
   },
   "sendTokens": {
     "message": "إرسال عملات رمزية"
@@ -1010,9 +974,6 @@
   },
   "slow": {
     "message": "بطيء"
-  },
-  "slower": {
-    "message": "أبطأ"
   },
   "somethingWentWrong": {
     "message": "عذراً! حدث خطأ ما."
@@ -1158,9 +1119,6 @@
   "transactionSubmitted": {
     "message": "تم تقديم المعاملة برسوم $1 من عملة جاس في $2."
   },
-  "transactionTime": {
-    "message": "وقت المعاملة"
-  },
   "transactionUpdated": {
     "message": "تم تحديث المعاملة في $2."
   },
@@ -1263,9 +1221,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "عبارة الأمان الشخصية الخاصة بك"
-  },
-  "yourSigRequested": {
-    "message": "جاري طلب توقيعك"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "سعر الغاز صفر عند التعجيل"

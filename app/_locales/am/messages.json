@@ -167,9 +167,6 @@
   "chainId": {
     "message": "የሰንሰለት መታወቂያ"
   },
-  "chartOnlyAvailableEth": {
-    "message": "ቻርት የሚገኘው በ Ethereum አውታረ መረቦች ላይ ብቻ ነው።"
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "ከሃርድዌርዎ ቋት ጋር ለመገናኘት MetaMask በ Google Chrome ላይ መጠቀም አለብዎት።"
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "የዘር ሐረግዎን በድጋሚ መጠባበቂያ ለመያዝ ከፈለጉ፣ በቅንብሮች -> ግላዊነት ውስጥ ሊያገኙት ይችላሉ።"
   },
-  "endOfFlowMessage7": {
-    "message": "ጥያቄዎች ካሉዎት ወይም የሆነ አጠራጣሪ ነገር ካዩ፣ እባክዎ ለ support@metamask.io ኢሜይል ይላኩ።"
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask የዘር ሐረግዎን መልሶ ማግኘት አልቻለም። ተጨማሪ መረጃ ያግኙ።"
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "ፈጣን"
-  },
-  "faster": {
-    "message": "በፍጥነት"
   },
   "fiat": {
     "message": "ፊያት",
@@ -514,9 +505,6 @@
   "importWallet": {
     "message": "ቋት አስመጣ"
   },
-  "importYourExisting": {
-    "message": "ባለ 12 ቃል የዘር ሐረግን በመጠቀም ነባር ቋትዎን ያስመጡ"
-  },
   "imported": {
     "message": "ከውጭ የመጣ",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -578,9 +566,6 @@
   },
   "links": {
     "message": "ማስፈንጠሪያዎች"
-  },
-  "liveGasPricePredictions": {
-    "message": "ቀጥታ የነዳጅ ዋጋ ትንበያዎች"
   },
   "loadMore": {
     "message": "ተጨማሪ ጫን"
@@ -781,15 +766,6 @@
   "privateNetwork": {
     "message": "የግል አውታረ መረብ"
   },
-  "protectYourKeys": {
-    "message": "ቁልፎችዎን ይጠብቁ!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "ስለ ዘር ሐረግዎ ይጠንቀቁ - ራሳቸውን ከ MetaMask ጋር ለማመሳሰል የሚሞከሩ ድረ ገጾች እናሉ ሰምተናል። MetaMask በጭራሽ የዘር ሐረግዎን አይጠይቅዎትም!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "የሐረግዎን ደህንነት ይጠብቁ። ይም የሆነ አጠራጣሪ ነገር ካዩ ወይም ስለ አንድ ድረ ገጽ እርግጠኛ ካልሆኑ፣ እባክዎ ለ support@metamask.io ኢሜይል ይላኩ"
-  },
   "queue": {
     "message": "ወረፋ"
   },
@@ -913,9 +889,6 @@
   "secretBackupPhraseWarning": {
     "message": "ማስጠንቀቂያ፡ የመጠባበቂያ ምዕራፍዎን በጭራሽ አይግለጹ። ይህን ሐረገ የያዘ ማንኛውም ሰው የእርስዎን Ether እስከወዲያኛው ሊወስደው ይችላል።"
   },
-  "secretPhrase": {
-    "message": "ካዝናዎን ወደነበረበት ለመመለስ ሚስጥራዊ ባለ አስራ ሁለት ቃል ሐረግዎን ያስገቡ።"
-  },
   "securityAndPrivacy": {
     "message": "ደህንነት እና ግላዊነት"
   },
@@ -937,17 +910,11 @@
   "selectAnAccountHelp": {
     "message": "መለያውን በ MetaMask ለማየት ይምረጡ"
   },
-  "selectCurrency": {
-    "message": "የገንዘብ ዓይነት ይምረጡ"
-  },
   "selectEachPhrase": {
     "message": "እባክዎ እያንዳንዱን ሐረግ በመምረጥ ትክክለኛነቱን ያረጋግጡ።"
   },
   "selectHdPath": {
     "message": "የ HD ዱካ ይምረጡ"
-  },
-  "selectLocale": {
-    "message": "አካባቢ ይምረጡ"
   },
   "selectPathHelp": {
     "message": "ነባር የሌጄር መለያዎችን ከታች ካላዩ፣ ዱካዎችን ወደ \"Legacy (MEW / MyCrypto)\" ለመቀየር ይሞክሩ"
@@ -960,9 +927,6 @@
   },
   "sendAmount": {
     "message": "መጠኑን ላክ"
-  },
-  "sendETH": {
-    "message": "ETH ላክ"
   },
   "sendTokens": {
     "message": "ተለዋጭ ስሞችን ላክ"
@@ -1014,9 +978,6 @@
   },
   "slow": {
     "message": "ቀስ"
-  },
-  "slower": {
-    "message": "ዘገምተኛ"
   },
   "somethingWentWrong": {
     "message": "ኤጭ! የሆነ ችግር ተፈጥሯል።"
@@ -1162,9 +1123,6 @@
   "transactionSubmitted": {
     "message": "ግብይቱ የቀረበው በነዳጅ ዋጋ $1በ$2ነው።"
   },
-  "transactionTime": {
-    "message": "የግብይት ጊዜ"
-  },
   "transactionUpdated": {
     "message": "ግብይት የዘመነው በ $2ነው።"
   },
@@ -1267,9 +1225,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "የግል ዘር ሐረግዎ"
-  },
-  "yourSigRequested": {
-    "message": "ፊርማዎ እየተጠየቀ ነው"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "በስፒድ አፕ ላይ ዜሮ የነዳጅ ዋጋ"

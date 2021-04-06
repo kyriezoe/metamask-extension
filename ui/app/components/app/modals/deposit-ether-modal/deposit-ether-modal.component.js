@@ -1,33 +1,31 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import { getNetworkDisplayName } from '../../../../../../app/scripts/controllers/network/util'
-import Button from '../../../ui/button'
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { NETWORK_TO_NAME_MAP } from '../../../../../../shared/constants/network';
+import Button from '../../../ui/button';
 
 export default class DepositEtherModal extends Component {
   static contextTypes = {
     t: PropTypes.func,
     metricsEvent: PropTypes.func.isRequired,
-  }
+  };
 
   static propTypes = {
-    network: PropTypes.string.isRequired,
+    chainId: PropTypes.string.isRequired,
+    isTestnet: PropTypes.bool.isRequired,
+    isMainnet: PropTypes.bool.isRequired,
     toWyre: PropTypes.func.isRequired,
     address: PropTypes.string.isRequired,
     toFaucet: PropTypes.func.isRequired,
     hideWarning: PropTypes.func.isRequired,
     hideModal: PropTypes.func.isRequired,
     showAccountDetailModal: PropTypes.func.isRequired,
-  }
-
-  faucetRowText = (networkName) => {
-    return this.context.t('getEtherFromFaucet', [networkName])
-  }
+  };
 
   goToAccountDetailsModal = () => {
-    this.props.hideWarning()
-    this.props.hideModal()
-    this.props.showAccountDetailModal()
-  }
+    this.props.hideWarning();
+    this.props.hideModal();
+    this.props.showAccountDetailModal();
+  };
 
   renderRow({
     logo,
@@ -43,7 +41,7 @@ export default class DepositEtherModal extends Component {
     showBackButton,
   }) {
     if (hide) {
-      return null
+      return null;
     }
 
     return (
@@ -82,14 +80,19 @@ export default class DepositEtherModal extends Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 
   render() {
-    const { network, toWyre, address, toFaucet } = this.props
-
-    const isTestNetwork = ['3', '4', '5', '42'].find((n) => n === network)
-    const networkName = getNetworkDisplayName(network)
+    const {
+      chainId,
+      toWyre,
+      address,
+      toFaucet,
+      isTestnet,
+      isMainnet,
+    } = this.props;
+    const networkName = NETWORK_TO_NAME_MAP[chainId];
 
     return (
       <div className="page-container page-container--full-width page-container--full-height">
@@ -103,8 +106,8 @@ export default class DepositEtherModal extends Component {
           <div
             className="page-container__header-close"
             onClick={() => {
-              this.props.hideWarning()
-              this.props.hideModal()
+              this.props.hideWarning();
+              this.props.hideModal();
             }}
           />
         </div>
@@ -130,10 +133,10 @@ export default class DepositEtherModal extends Component {
                     action: 'Deposit Ether',
                     name: 'Click buy Ether via Wyre',
                   },
-                })
-                toWyre(address)
+                });
+                toWyre(address);
               },
-              hide: isTestNetwork,
+              hide: !isMainnet,
             })}
             {this.renderRow({
               logo: (
@@ -152,17 +155,18 @@ export default class DepositEtherModal extends Component {
               buttonLabel: this.context.t('viewAccount'),
               onButtonClick: () => this.goToAccountDetailsModal(),
             })}
-            {this.renderRow({
-              logo: <i className="fa fa-tint fa-2x" />,
-              title: this.context.t('testFaucet'),
-              text: this.faucetRowText(networkName),
-              buttonLabel: this.context.t('getEther'),
-              onButtonClick: () => toFaucet(network),
-              hide: !isTestNetwork,
-            })}
+            {networkName &&
+              this.renderRow({
+                logo: <i className="fa fa-tint fa-2x" />,
+                title: this.context.t('testFaucet'),
+                text: this.context.t('getEtherFromFaucet', [networkName]),
+                buttonLabel: this.context.t('getEther'),
+                onButtonClick: () => toFaucet(chainId),
+                hide: !isTestnet,
+              })}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

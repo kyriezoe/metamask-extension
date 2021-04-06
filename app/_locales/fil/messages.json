@@ -146,9 +146,6 @@
   "cancelled": {
     "message": "Nakansela"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Available lang ang chart sa mga Ethereum network."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Kailangan mong gamitin ang MetaMask sa Google Chrome upang makakonekta sa iyong Hardware Wallet."
   },
@@ -329,9 +326,6 @@
   "endOfFlowMessage6": {
     "message": "Kung kailangan mong i-back up ulit ang iyong seed phrase, makikita mo ito sa Mga Setting -> Seguridad."
   },
-  "endOfFlowMessage7": {
-    "message": "Kung may mga tanong ka o nakakita ka ng kahina-hinalang bagay, i-email ang support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "Hindi ma-recover ng MetaMask ang iyong seedphrase. Alamin pa."
   },
@@ -370,9 +364,6 @@
   },
   "fast": {
     "message": "Mabilis"
-  },
-  "faster": {
-    "message": "Mas Mabilis"
   },
   "fileImportFail": {
     "message": "Hindi gumagana ang pag-import ng file? Mag-click dito!",
@@ -471,9 +462,6 @@
   "importWallet": {
     "message": "Mag-import ng Wallet"
   },
-  "importYourExisting": {
-    "message": "I-import ang kasalukuyan mong wallet gamit ang isang seed phrase na may 12 salita"
-  },
   "imported": {
     "message": "Na-import",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -528,9 +516,6 @@
   },
   "links": {
     "message": "Mga Link"
-  },
-  "liveGasPricePredictions": {
-    "message": "Mga Live na Prediksyon sa Presyo ng Gas"
   },
   "loadMore": {
     "message": "Mag-load Pa"
@@ -708,15 +693,6 @@
   "privateNetwork": {
     "message": "Pribadong Network"
   },
-  "protectYourKeys": {
-    "message": "Protektahan Ang Iyong Mga Key!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Mag-ingat sa iyong seed phrase — may mga ulat na may mga website na nagpapanggap bilang MetaMask. Hindi kailanman hihilingin ng MetaMask ang iyong seed phrase!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Panatilihing ligtas ang iyong parirala. Kung may makikita kang kahina-hinala, o hindi ka sigurado tungkol sa isang website, mag-email sa support@metamask.io"
-  },
   "queue": {
     "message": "I-queue"
   },
@@ -828,9 +804,6 @@
   "secretBackupPhraseWarning": {
     "message": "BABALA: Huwag ibunyag ang iyong backup phrase. Mananakaw ng kahit sinong may ganitong parirala ang iyong Ether at hindi na ito maibabalik."
   },
-  "secretPhrase": {
-    "message": "Ilagay ang iyong lihim na pariralang may labindalawang salita para ma-restore ang iyong vault."
-  },
   "securityAndPrivacy": {
     "message": "Seguridad at Privacy"
   },
@@ -852,17 +825,11 @@
   "selectAnAccountHelp": {
     "message": "Piliin ang account na titingnan sa MetaMask"
   },
-  "selectCurrency": {
-    "message": "Pumili ng Currency"
-  },
   "selectEachPhrase": {
     "message": "Pakipili ang bawat parirala para tiyaking tama ito."
   },
   "selectHdPath": {
     "message": "Piliin ang HD Path"
-  },
-  "selectLocale": {
-    "message": "Pumili ng Locale"
   },
   "selectPathHelp": {
     "message": "Kung hindi mo makita ang kasalukuyan mong mga Ledger account sa ibaba, subukang ilipat ang mga path sa \"Legacy (MEW / MyCrypto)\""
@@ -875,9 +842,6 @@
   },
   "sendAmount": {
     "message": "Magpadala ng Halaga"
-  },
-  "sendETH": {
-    "message": "Magpadala ng ETH"
   },
   "sendTokens": {
     "message": "Magpadala ng Mga Token"
@@ -923,9 +887,6 @@
   },
   "slow": {
     "message": "Mabagal"
-  },
-  "slower": {
-    "message": "Mas Mabagal"
   },
   "somethingWentWrong": {
     "message": "Oops! Nagkaroon ng problema."
@@ -1062,9 +1023,6 @@
   "transactionSubmitted": {
     "message": "Nasumite ang transaksyon nang may gas fee na $1 sa $2."
   },
-  "transactionTime": {
-    "message": "Oras ng Transaksyon"
-  },
   "transactionUpdated": {
     "message": "Na-update ang transaksyon sa $2."
   },
@@ -1161,9 +1119,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Ang iyong pribadong seed phrase"
-  },
-  "yourSigRequested": {
-    "message": "Hinihiling ang iyong signature"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Zero ang presyo ng gas sa speed up"

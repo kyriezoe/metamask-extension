@@ -190,9 +190,6 @@
   "fast": {
     "message": "เร็ว"
   },
-  "faster": {
-    "message": "เร็วขึ้น"
-  },
   "fiat": {
     "message": "เงินตรา",
     "description": "Exchange type"
@@ -423,17 +420,11 @@
   "search": {
     "message": "ค้นหา"
   },
-  "secretPhrase": {
-    "message": "ป้อนกลุ่มคำสิบสองคำเพื่อกู้คืนตู้เซฟของคุณ"
-  },
   "seedPhraseReq": {
     "message": "กลุ่มคำชีดมีความยาว 12 คำ"
   },
   "selectAnAccount": {
     "message": "เลือกบัญชี"
-  },
-  "selectCurrency": {
-    "message": "เลือกสกุลเงิน"
   },
   "selectHdPath": {
     "message": "เลือกเส้นทาง HD"
@@ -446,9 +437,6 @@
   },
   "sendAmount": {
     "message": "ส่งจำนวนเงินนี้"
-  },
-  "sendETH": {
-    "message": "ส่งอีเธอร์"
   },
   "sendTokens": {
     "message": "ส่งโทเค็น"
@@ -476,9 +464,6 @@
   },
   "signed": {
     "message": "ลงชื่อแล้ว"
-  },
-  "slower": {
-    "message": "ช้าลง"
   },
   "stateLogs": {
     "message": "บันทึกของสถานะ"
@@ -579,8 +564,5 @@
   },
   "youSign": {
     "message": "คุณกำลังเซ็นชื่อ"
-  },
-  "yourSigRequested": {
-    "message": "ลายเซ็นของคุณกำลังได้รับการร้องขอ"
   }
 }

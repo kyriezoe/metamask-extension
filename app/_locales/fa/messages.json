@@ -167,9 +167,6 @@
   "chainId": {
     "message": "آی دی زنجیره"
   },
-  "chartOnlyAvailableEth": {
-    "message": "تنها قابل دسترس را در شبکه های ایتریوم جدول بندی نمایید"
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "برای وصل شدن به کیف سخت افزار شما باید MetaMask را در گوگل کروم استفاده نمایید."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "در صورتیکه شما نیاز به گرفتن دوباره پشتیبان عبارت بازیاب داشته باشید، میتوانید آنرا در Settings -> Security دریافت نمایید."
   },
-  "endOfFlowMessage7": {
-    "message": "در صورتیکه پرسشی داشته یا چیزی مشکوک را میبینید، به support@metamask.io ایمیل کنید."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask نمیتواند عبارت بازیاب تان را دوباره دریافت نماید.\nبیشتر بدانید."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "سریع"
-  },
-  "faster": {
-    "message": "سریع تر"
   },
   "fiat": {
     "message": "حکم قانونی",
@@ -514,9 +505,6 @@
   "importWallet": {
     "message": "وارد سازی کیف"
   },
-  "importYourExisting": {
-    "message": "کیف موجود تان را با استفاده از عبارت رمزیاب 12 کلمه یی وارد کنید"
-  },
   "imported": {
     "message": "وارد شده",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -578,9 +566,6 @@
   },
   "links": {
     "message": "لینک ها"
-  },
-  "liveGasPricePredictions": {
-    "message": "پیش بینی های قیمت گاز"
   },
   "loadMore": {
     "message": "بارگیری بیشتر"
@@ -784,15 +769,6 @@
   "privateNetwork": {
     "message": "شبکه شخصی"
   },
-  "protectYourKeys": {
-    "message": "کلید های خود را حفظ کنید!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "مراقب عبارت بازیاب تان باشید - گفته هایی وجود دارد که وبسایت ها تلاش میکنند تا از MetaMask نسخه برداری کنند. MetaMask هرگز از شما عبارت بازیاب را نمیپرسد!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "عبارت تان را مصؤن نگهدارید. در صورت مشاهده چیز مشکوک، یا در صورتیکه در مورد یک وبسایت مطمئن نیستید، به support@metamask.io ایمیل کنید"
-  },
   "queue": {
     "message": "صف"
   },
@@ -916,9 +892,6 @@
   "secretBackupPhraseWarning": {
     "message": "هشدار: هرگز عبارت پشتیبان تان را به کسی فاش نسازید. هرکسیکه این عبارت را داشته باشد ایتر شما را برای همیشه خواهد گرفت."
   },
-  "secretPhrase": {
-    "message": "جهت بازیابی خزانه تان عبارت دوازده کلمه یی تان را اینجا وارد کنید."
-  },
   "securityAndPrivacy": {
     "message": "امنیت و حریم خصوصی"
   },
@@ -940,17 +913,11 @@
   "selectAnAccountHelp": {
     "message": "برای مشاهده MetaMask حساب را انتخاب نمایید"
   },
-  "selectCurrency": {
-    "message": "واحد پول را انتخاب کنید"
-  },
   "selectEachPhrase": {
     "message": "لطفًا جهت اطمینان از درستی، هر عبارت را انتخاب کنید."
   },
   "selectHdPath": {
     "message": "انتخاب مسیر HD"
-  },
-  "selectLocale": {
-    "message": "محل را انتخاب کنید"
   },
   "selectPathHelp": {
     "message": "در صورتیکه شما حساب های موجود دفتر حساب را در ذیل نمیبینید، مسیر ها به \"Legacy (MEW / MyCrypto)\"  تغییر دهید"
@@ -963,9 +930,6 @@
   },
   "sendAmount": {
     "message": "ارسال مبلغ"
-  },
-  "sendETH": {
-    "message": "ارسال ETH"
   },
   "sendTokens": {
     "message": "رمزیاب ها را ارسال کنید"
@@ -1017,9 +981,6 @@
   },
   "slow": {
     "message": "آهسته"
-  },
-  "slower": {
-    "message": "آهسته تر"
   },
   "somethingWentWrong": {
     "message": "اوه! مشکلی پیش آمده."
@@ -1165,9 +1126,6 @@
   "transactionSubmitted": {
     "message": "معامله با فیس گاز 1$1 در 2$2 ارائه شد."
   },
-  "transactionTime": {
-    "message": "زمان معامله"
-  },
   "transactionUpdated": {
     "message": "معامله به 1$2 بروزرسانی شد."
   },
@@ -1270,9 +1228,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "عبارت بازیاب شخصی شما"
-  },
-  "yourSigRequested": {
-    "message": "امضاء شما درخواست میشود"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "قیمت صفر گاز بسوی سرعت"

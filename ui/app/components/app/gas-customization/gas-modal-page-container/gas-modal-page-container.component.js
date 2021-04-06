@@ -1,28 +1,24 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import PageContainer from '../../../ui/page-container'
-import { Tabs, Tab } from '../../../ui/tabs'
-import AdvancedTabContent from './advanced-tab-content'
-import BasicTabContent from './basic-tab-content'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import PageContainer from '../../../ui/page-container';
+import { Tabs, Tab } from '../../../ui/tabs';
+import AdvancedTabContent from './advanced-tab-content';
+import BasicTabContent from './basic-tab-content';
 
 export default class GasModalPageContainer extends Component {
   static contextTypes = {
     t: PropTypes.func,
     metricsEvent: PropTypes.func,
     trackEvent: PropTypes.func,
-  }
+  };
 
   static propTypes = {
     hideBasic: PropTypes.bool,
     updateCustomGasPrice: PropTypes.func,
     updateCustomGasLimit: PropTypes.func,
-    currentTimeEstimate: PropTypes.string,
     insufficientBalance: PropTypes.bool,
-    fetchBasicGasAndTimeEstimates: PropTypes.func,
-    fetchGasEstimates: PropTypes.func,
+    fetchBasicGasEstimates: PropTypes.func,
     gasPriceButtonGroupProps: PropTypes.object,
-    gasChartProps: PropTypes.object,
-    gasEstimatesLoading: PropTypes.bool,
     infoRowProps: PropTypes.shape({
       originalTotalFiat: PropTypes.string,
       originalTotalEth: PropTypes.string,
@@ -35,30 +31,21 @@ export default class GasModalPageContainer extends Component {
     customModalGasPriceInHex: PropTypes.string,
     customModalGasLimitInHex: PropTypes.string,
     cancelAndClose: PropTypes.func,
-    blockTime: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     customPriceIsSafe: PropTypes.bool,
     isSpeedUp: PropTypes.bool,
     isRetry: PropTypes.bool,
     disableSave: PropTypes.bool,
-    isEthereumNetwork: PropTypes.bool,
-  }
+    customPriceIsExcessive: PropTypes.bool.isRequired,
+  };
 
   componentDidMount() {
-    const promise = this.props.hideBasic
-      ? Promise.resolve(this.props.blockTime)
-      : this.props
-          .fetchBasicGasAndTimeEstimates()
-          .then((basicEstimates) => basicEstimates.blockTime)
-
-    promise.then((blockTime) => {
-      this.props.fetchGasEstimates(blockTime)
-    })
+    this.props.fetchBasicGasEstimates();
   }
 
   renderBasicTabContent(gasPriceButtonGroupProps) {
     return (
       <BasicTabContent gasPriceButtonGroupProps={gasPriceButtonGroupProps} />
-    )
+    );
   }
 
   renderAdvancedTabContent() {
@@ -67,16 +54,13 @@ export default class GasModalPageContainer extends Component {
       updateCustomGasLimit,
       customModalGasPriceInHex,
       customModalGasLimitInHex,
-      gasChartProps,
-      currentTimeEstimate,
       insufficientBalance,
-      gasEstimatesLoading,
       customPriceIsSafe,
       isSpeedUp,
       isRetry,
+      customPriceIsExcessive,
       infoRowProps: { transactionFee },
-      isEthereumNetwork,
-    } = this.props
+    } = this.props;
 
     return (
       <AdvancedTabContent
@@ -84,17 +68,14 @@ export default class GasModalPageContainer extends Component {
         updateCustomGasLimit={updateCustomGasLimit}
         customModalGasPriceInHex={customModalGasPriceInHex}
         customModalGasLimitInHex={customModalGasLimitInHex}
-        timeRemaining={currentTimeEstimate}
         transactionFee={transactionFee}
-        gasChartProps={gasChartProps}
         insufficientBalance={insufficientBalance}
-        gasEstimatesLoading={gasEstimatesLoading}
         customPriceIsSafe={customPriceIsSafe}
         isSpeedUp={isSpeedUp}
         isRetry={isRetry}
-        isEthereumNetwork={isEthereumNetwork}
+        customPriceIsExcessive={customPriceIsExcessive}
       />
-    )
+    );
   }
 
   renderInfoRows(newTotalFiat, newTotalEth, sendAmount, transactionFee) {
@@ -132,7 +113,7 @@ export default class GasModalPageContainer extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   renderTabs() {
@@ -140,7 +121,7 @@ export default class GasModalPageContainer extends Component {
       gasPriceButtonGroupProps,
       hideBasic,
       infoRowProps: { newTotalFiat, newTotalEth, sendAmount, transactionFee },
-    } = this.props
+    } = this.props;
 
     let tabsToRender = [
       {
@@ -151,10 +132,10 @@ export default class GasModalPageContainer extends Component {
         name: this.context.t('advanced'),
         content: this.renderAdvancedTabContent(),
       },
-    ]
+    ];
 
     if (hideBasic) {
-      tabsToRender = tabsToRender.slice(1)
+      tabsToRender = tabsToRender.slice(1);
     }
 
     return (
@@ -173,7 +154,7 @@ export default class GasModalPageContainer extends Component {
           </Tab>
         ))}
       </Tabs>
-    )
+    );
   }
 
   render() {
@@ -184,7 +165,7 @@ export default class GasModalPageContainer extends Component {
       customModalGasLimitInHex,
       disableSave,
       isSpeedUp,
-    } = this.props
+    } = this.props;
 
     return (
       <div className="gas-modal-page-container">
@@ -203,15 +184,15 @@ export default class GasModalPageContainer extends Component {
                   action: 'Activity Log',
                   name: 'Saved "Speed Up"',
                 },
-              })
+              });
             }
-            onSubmit(customModalGasLimitInHex, customModalGasPriceInHex)
+            onSubmit(customModalGasLimitInHex, customModalGasPriceInHex);
           }}
           submitText={this.context.t('save')}
           headerCloseText={this.context.t('close')}
           hideCancel
         />
       </div>
-    )
+    );
   }
 }

@@ -161,9 +161,6 @@
   "chainId": {
     "message": "ID da Cadeia"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Tabela disponível apenas em redes de Ethereum."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Você precisa usar o MetaMask no Google Chrome para se conectar à sua Carteira de Hardware."
   },
@@ -347,9 +344,6 @@
   "endOfFlowMessage6": {
     "message": "Se precisar fazer backup de sua frase-semente de novo, acesse Configurações -> Segurança."
   },
-  "endOfFlowMessage7": {
-    "message": "Caso você tenha alguma dúvida ou veja algo suspeito, envie um e-mail para support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "O MetaMask não pode recuperar sua frase semente. Saiba mais."
   },
@@ -391,9 +385,6 @@
   },
   "fast": {
     "message": "Rápido"
-  },
-  "faster": {
-    "message": "Mais rápido"
   },
   "fiat": {
     "message": "Ordem",
@@ -508,9 +499,6 @@
   "importWallet": {
     "message": "Importar Carteira"
   },
-  "importYourExisting": {
-    "message": "Importe sua carteira existente usando uma frase-semente de 12 palavras"
-  },
   "imported": {
     "message": "Importado",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -569,9 +557,6 @@
   },
   "likeToAddTokens": {
     "message": "Deseja adicionar esses tokens?"
-  },
-  "liveGasPricePredictions": {
-    "message": "Previsões de Preços de Gás Ao Vivo"
   },
   "loadMore": {
     "message": "Carregar Mais"
@@ -772,15 +757,6 @@
   "privateNetwork": {
     "message": "Rede Particular"
   },
-  "protectYourKeys": {
-    "message": "Proteja as suas chaves!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Tome cuidado com sua frase semente — houve relatos de sites que tentam imitar o MetaMask. O MetaMask nunca pedirá sua frase semente!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Mantenha a sua frase segura. Se você vir algo esquisito ou está inseguro quanto a um site, envie um e-mail para support@metamask.io"
-  },
   "queue": {
     "message": "Fila"
   },
@@ -904,9 +880,6 @@
   "secretBackupPhraseWarning": {
     "message": "ATENÇÃO: Nunca revele sua frase de backup a ninguém. Qualquer pessoa com essa frase pode obter seu Ether para sempre."
   },
-  "secretPhrase": {
-    "message": "Digite sua frase secreta de doze palavras aqui para restaurar seu cofre."
-  },
   "securityAndPrivacy": {
     "message": "Segurança & Privacidade"
   },
@@ -928,17 +901,11 @@
   "selectAnAccountHelp": {
     "message": "Selecione a conta para ver no MetaMask"
   },
-  "selectCurrency": {
-    "message": "Selecione a Moeda"
-  },
   "selectEachPhrase": {
     "message": "Selecione cada frase para se certificar de que esteja correta."
   },
   "selectHdPath": {
     "message": "Selecione o caminho no HD"
-  },
-  "selectLocale": {
-    "message": "Selecionar Local"
   },
   "selectPathHelp": {
     "message": "Se não conseguir ver as contas da Ledger existentes abaixo, experimente alternar os caminhos para \"Legacy (MEW / MyCrypto)\""
@@ -951,9 +918,6 @@
   },
   "sendAmount": {
     "message": "Enviar Quantia"
-  },
-  "sendETH": {
-    "message": "Enviar ETH"
   },
   "sendTokens": {
     "message": "Enviar Tokens"
@@ -1005,9 +969,6 @@
   },
   "slow": {
     "message": "Lento"
-  },
-  "slower": {
-    "message": "Mais lento"
   },
   "somethingWentWrong": {
     "message": "Opa! Algo deu errado."
@@ -1147,9 +1108,6 @@
   "transactionSubmitted": {
     "message": "Transação enviada com taxa de gás de $1 a $2."
   },
-  "transactionTime": {
-    "message": "Hora da Transação"
-  },
   "transactionUpdated": {
     "message": "Transação atualizada às $2."
   },
@@ -1252,9 +1210,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Sua frase-semente particular"
-  },
-  "yourSigRequested": {
-    "message": "Sua assinatura está sendo solicitada"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Preço de Gas zero na agilização"

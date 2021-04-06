@@ -167,9 +167,6 @@
   "chainId": {
     "message": "Ketjun tunnus"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Kaavio saatavilla vain Ethereum-verkoissa."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Sinun tarvitsee käyttää MetaMaskia Google Chromessa voidaksesi yhdistää laitteistokukkaroosi."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "Jos tarvitse uuden varmuuskopion juurilauseestasi, niin se löytyy osiosta Asetukset -> Turvallisuus."
   },
-  "endOfFlowMessage7": {
-    "message": "Jos sinulla on joskus jotakin kysyttävää tai jos näet jotakin epäilyttävää, lähetä sähköpostia osoitteeseen support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask ei pysty palauttamaan salaustekstiäsi. Lue lisää."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "Nopea"
-  },
-  "faster": {
-    "message": "Nopeammin"
   },
   "fiat": {
     "message": "Kiinteä",
@@ -514,9 +505,6 @@
   "importWallet": {
     "message": "Tuo kukkaro"
   },
-  "importYourExisting": {
-    "message": "Tuo nykyinen lompakkosi käyttäen 12 sanan \n siemenlausetta"
-  },
   "imported": {
     "message": "Tuotu",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -578,9 +566,6 @@
   },
   "links": {
     "message": "Linkit"
-  },
-  "liveGasPricePredictions": {
-    "message": "Polttoaineen hintojen live-ennusteet"
   },
   "loadMore": {
     "message": "Lataa lisää"
@@ -781,15 +766,6 @@
   "privateNetwork": {
     "message": "Yksityinen verkko"
   },
-  "protectYourKeys": {
-    "message": "Suojele avaimiasi!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Ole varovainen salausavaimesi kanssa – joidenkin verkkosivustojen kerrotaan yrittäneen matkia MetaMaskia. MetaMask ei koskaan kysy salausavaintasi!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Pidä lauseesi tallessa. Jos näet jotain epäilyttävää tai et ole varma jostain sivustosta, lähetä sähköpostia osoitteeseen support@metamask.io"
-  },
   "queue": {
     "message": "Jono"
   },
@@ -913,9 +889,6 @@
   "secretBackupPhraseWarning": {
     "message": "VAROITUS: älä koskaan kerro varmuuskopiolausettasi kenellekään. Kuka tahansa tämän lauseen omaava voi napata Etherisi pysyvästi."
   },
-  "secretPhrase": {
-    "message": "Palauta holvisi syöttämällä tähän salainen kahdentoista sanan tekstisi."
-  },
   "securityAndPrivacy": {
     "message": "Turva & yksityisyys"
   },
@@ -937,17 +910,11 @@
   "selectAnAccountHelp": {
     "message": "Valitse MetaMaskissa näytettävä tili"
   },
-  "selectCurrency": {
-    "message": "Valitse valuutta"
-  },
   "selectEachPhrase": {
     "message": "Ole hyvä ja valitse jokainen teksti järjestyksessä varmistaaksesi, että se on oikein."
   },
   "selectHdPath": {
     "message": "Valitse HD-polku"
-  },
-  "selectLocale": {
-    "message": "Valitse kielialue"
   },
   "selectPathHelp": {
     "message": "Jos et näe nykyisiä Ledger-tilejäsi tämän alla, koeta vaihtaa poluksi ”Vanha (MEW / MyCrypto)”"
@@ -960,9 +927,6 @@
   },
   "sendAmount": {
     "message": "Lähetä summa"
-  },
-  "sendETH": {
-    "message": "Lähetä ETH:iä"
   },
   "sendTokens": {
     "message": "Lähetä tietueita"
@@ -1014,9 +978,6 @@
   },
   "slow": {
     "message": "Hidas"
-  },
-  "slower": {
-    "message": "Hitaammin"
   },
   "somethingWentWrong": {
     "message": "Hupsis! Jotakin meni pieleen."
@@ -1162,9 +1123,6 @@
   "transactionSubmitted": {
     "message": "Tapahtuma toimitettu $1 bensataksalla kohdassa $2."
   },
-  "transactionTime": {
-    "message": "Tapahtuman aika"
-  },
   "transactionUpdated": {
     "message": "Tapahtuma päivitetty – $2."
   },
@@ -1267,9 +1225,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Sinun yksityinen siemenlauseesi"
-  },
-  "yourSigRequested": {
-    "message": "Allekirjoitustasi pyydetään"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Polttoaine ei maksa kiihdytyksen yhteydessä"

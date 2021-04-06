@@ -1,34 +1,35 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Modal from '../../modal'
-import { addressSummary } from '../../../../helpers/utils/util'
-import Identicon from '../../../ui/identicon'
-import getAccountLink from '../../../../../lib/account-link'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Modal from '../../modal';
+import { addressSummary } from '../../../../helpers/utils/util';
+import Identicon from '../../../ui/identicon';
+import getAccountLink from '../../../../../lib/account-link';
 
 export default class ConfirmRemoveAccount extends Component {
   static propTypes = {
     hideModal: PropTypes.func.isRequired,
     removeAccount: PropTypes.func.isRequired,
     identity: PropTypes.object.isRequired,
-    network: PropTypes.string.isRequired,
-  }
+    chainId: PropTypes.string.isRequired,
+    rpcPrefs: PropTypes.object.isRequired,
+  };
 
   static contextTypes = {
     t: PropTypes.func,
-  }
+  };
 
   handleRemove = () => {
     this.props
       .removeAccount(this.props.identity.address)
-      .then(() => this.props.hideModal())
-  }
+      .then(() => this.props.hideModal());
+  };
 
   handleCancel = () => {
-    this.props.hideModal()
-  }
+    this.props.hideModal();
+  };
 
   renderSelectedAccount() {
-    const { identity } = this.props
+    const { identity } = this.props;
     return (
       <div className="confirm-remove-account__account">
         <div className="confirm-remove-account__account__identicon">
@@ -49,7 +50,11 @@ export default class ConfirmRemoveAccount extends Component {
         <div className="confirm-remove-account__account__link">
           <a
             className=""
-            href={getAccountLink(identity.address, this.props.network)}
+            href={getAccountLink(
+              identity.address,
+              this.props.chainId,
+              this.props.rpcPrefs,
+            )}
             target="_blank"
             rel="noopener noreferrer"
             title={this.context.t('etherscanView')}
@@ -61,11 +66,11 @@ export default class ConfirmRemoveAccount extends Component {
           </a>
         </div>
       </div>
-    )
+    );
   }
 
   render() {
-    const { t } = this.context
+    const { t } = this.context;
 
     return (
       <Modal
@@ -92,6 +97,6 @@ export default class ConfirmRemoveAccount extends Component {
           </div>
         </div>
       </Modal>
-    )
+    );
   }
 }

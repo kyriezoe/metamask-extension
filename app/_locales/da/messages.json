@@ -167,9 +167,6 @@
   "chainId": {
     "message": "Kæde-ID"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Skema kun tilgængeligt på Ethereum-netværk."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Du skal bruge MetaMask i Google Chrome for at forbinde med din Hardware Wallet."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "Hvis du får brug for at lave en backup af din seedfrase igen, kan du finde det under Indstillinger -> Sikkerhed."
   },
-  "endOfFlowMessage7": {
-    "message": "Hvis du har spørgsmål eller bemærker noget mistænkeligt, send en mail til support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask kan ikke gendanne din seed-sætning. Få mere at vide."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "Hurtig"
-  },
-  "faster": {
-    "message": "Hurtigere"
   },
   "fileImportFail": {
     "message": "Virker filimportering ikke? Klik her!",
@@ -507,9 +498,6 @@
   "importWallet": {
     "message": "Importér pung"
   },
-  "importYourExisting": {
-    "message": "Importér din eksisterende pung med en 12-ords seedfrase"
-  },
   "imported": {
     "message": "Importeret",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -568,9 +556,6 @@
   },
   "likeToAddTokens": {
     "message": "Ønsker du at tilføje disse tokens?"
-  },
-  "liveGasPricePredictions": {
-    "message": "Live forudsigelser af brændstofpriser"
   },
   "loadMore": {
     "message": "Indlæs Mere"
@@ -765,15 +750,6 @@
   "privateNetwork": {
     "message": "Privat netværk"
   },
-  "protectYourKeys": {
-    "message": "Beskyt dine nøgler!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Vær forsigtig med din backupsætning - der har været rapporter om websteder, der forsøger at efterligne MetaMask. MetaMask vil aldrig bede om din backupsætning!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Opbevar din frase et sikkert sted. Hvis du ser noget mistænkeligt, eller du er usikker på hjemmesiden, skriv en email til support@metamask.io"
-  },
   "queue": {
     "message": "Kø"
   },
@@ -897,9 +873,6 @@
   "secretBackupPhraseWarning": {
     "message": "ADVARSEL: Afslør aldrig din backup-frase. Enhver med denne frase kan tage din Ether for altid."
   },
-  "secretPhrase": {
-    "message": "Indtast din hemmelige tolv ord lange sætning for at gendanne din vault."
-  },
   "securityAndPrivacy": {
     "message": "Sikkerhed & Privatliv"
   },
@@ -921,17 +894,11 @@
   "selectAnAccountHelp": {
     "message": "Vælg kontoen der skal vises i MetaMask"
   },
-  "selectCurrency": {
-    "message": "Vælg valuta"
-  },
   "selectEachPhrase": {
     "message": "Vælg venligst hver sætning, for at sikre at de er korrekte."
   },
   "selectHdPath": {
     "message": "Vælg HD-Sti"
-  },
-  "selectLocale": {
-    "message": "Vælg Lokalitet"
   },
   "selectPathHelp": {
     "message": "Hvis du ikke ser dine eksisterende Ledger-konti nedenfor, kan du prøve at skifte til \"Legacy (MEW / MyCrypto)\""
@@ -941,9 +908,6 @@
   },
   "sendAmount": {
     "message": "Send Beløb"
-  },
-  "sendETH": {
-    "message": "Vælg ETH"
   },
   "sendTokens": {
     "message": "Send tokens"
@@ -995,9 +959,6 @@
   },
   "slow": {
     "message": "Langsom"
-  },
-  "slower": {
-    "message": "Langsommere"
   },
   "somethingWentWrong": {
     "message": "Ups! Noget gik galt."
@@ -1134,9 +1095,6 @@
   "transactionSubmitted": {
     "message": "Transaktion indsendt med brændstofgebyr på $1 til $2."
   },
-  "transactionTime": {
-    "message": "Transaktionstid"
-  },
   "transactionUpdated": {
     "message": "Transaktion opdateret til $2."
   },
@@ -1239,9 +1197,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Din private seed-sætning"
-  },
-  "yourSigRequested": {
-    "message": "Din signatur er ønsket"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Nul brændstofpris på fremskynding"

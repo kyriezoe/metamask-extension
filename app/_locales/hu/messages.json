@@ -167,9 +167,6 @@
   "chainId": {
     "message": "Lánc azonosítója"
   },
-  "chartOnlyAvailableEth": {
-    "message": "A diagram csak Ethereum hálózatokon érhető el"
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "A MetaMask-ot Google Chrome-mal kell használnia a Hardveres pénztárcához való csatlakozáshoz."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "Ha ismét biztonsági másolatot kell készítenie a seed mondatról, megtalálja azt a Beállítások -> Biztonság menüben."
   },
-  "endOfFlowMessage7": {
-    "message": "Ha bármilyen kérdése van, vagy valami gyanús dolgot tapasztal, írjon a support@metamask.io címre."
-  },
   "endOfFlowMessage8": {
     "message": "A MetaMask nem tudta helyreállítani a seed mondatot. Tudjon meg többet."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "Gyors"
-  },
-  "faster": {
-    "message": "Gyorsabban"
   },
   "fileImportFail": {
     "message": "Nem működik a fájl importálása? Kattintson ide!",
@@ -510,9 +501,6 @@
   "importWallet": {
     "message": "Pénztárca importálása"
   },
-  "importYourExisting": {
-    "message": "Importálja meglévő pénztárcáját a 12 szóból álló seed mondat segítségével"
-  },
   "imported": {
     "message": "Importált",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -574,9 +562,6 @@
   },
   "links": {
     "message": "Linkek"
-  },
-  "liveGasPricePredictions": {
-    "message": "Élő előrejelzések gázárak alakulására"
   },
   "loadMore": {
     "message": "Továbbiak betöltése"
@@ -777,15 +762,6 @@
   "privateNetwork": {
     "message": "Magánhálózat"
   },
-  "protectYourKeys": {
-    "message": "Védje kulcsait!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Vigyázzod a gyarapítási fázissal - olyan oldalakat jelentettek, amelyek a MetaMask-ot utánozzák. A MetaMask soha nem kéri el a gyarapítási fázisát."
-  },
-  "protectYourKeysMessage2": {
-    "message": "Őrizze biztonságos helyen a mondatot. Ha bármilyen gyanús dolgot tapasztal, vagy bizonytalan egy weboldalt illetően, írjon a support@metamask.io címre."
-  },
   "queue": {
     "message": "Nyomtatólista"
   },
@@ -909,9 +885,6 @@
   "secretBackupPhraseWarning": {
     "message": "FIGYELEM: Senkise se adja meg a biztonsági szakaszát. Ennek tulajdonosa örökre elviheti Ether-jeit."
   },
-  "secretPhrase": {
-    "message": "Tárolód helyreállításához írd be titkos tizenkét szavas szókapcsolatodat ide."
-  },
   "securityAndPrivacy": {
     "message": "Biztonság és adatvédelem"
   },
@@ -933,17 +906,11 @@
   "selectAnAccountHelp": {
     "message": "Válássza ki a MetaMask-ban megtekinteni kívánt fiókot"
   },
-  "selectCurrency": {
-    "message": "Válasszon valutát"
-  },
   "selectEachPhrase": {
     "message": "Kérjük, válassza ki az egyes mondatokat, hogy meggyőződjön azok helyességéről. "
   },
   "selectHdPath": {
     "message": "Válassz HD elérési útvonalat"
-  },
-  "selectLocale": {
-    "message": "Válaszd ki a területi beállítást"
   },
   "selectPathHelp": {
     "message": "Ha nem láthatók alább Ledger számláid, próbáld kicserélni az elérési útvonalat: „Legacy (MEW / MyCypto)”"
@@ -956,9 +923,6 @@
   },
   "sendAmount": {
     "message": "Összeg küldése"
-  },
-  "sendETH": {
-    "message": "ETH küldése"
   },
   "sendTokens": {
     "message": "Token küldése"
@@ -1010,9 +974,6 @@
   },
   "slow": {
     "message": "Lassú"
-  },
-  "slower": {
-    "message": "Lassabban"
   },
   "somethingWentWrong": {
     "message": "Hoppá! Valami hiba történt..."
@@ -1155,9 +1116,6 @@
   "transactionSubmitted": {
     "message": "Tranzakció jóváhagyva $1 üzemanyag költséggel $2-kor."
   },
-  "transactionTime": {
-    "message": "Tranzakció ideje"
-  },
   "transactionUpdated": {
     "message": "Tranzakció frissítve $2-nál"
   },
@@ -1260,9 +1218,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Az ön privát seed mondata"
-  },
-  "yourSigRequested": {
-    "message": "Szükség van az aláírására"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Nulla gázár a gyorsuláshoz"

@@ -161,9 +161,6 @@
   "chainId": {
     "message": "ID reťazca"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Graf je k dispozícii iba v sieťach Ethereum."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Ak sa chcete pripojiť k svojej hardvérovej peňaženke, musíte v Google Chrome použiť MetaMask."
   },
@@ -347,9 +344,6 @@
   "endOfFlowMessage6": {
     "message": "Ak potrebujete backup frázu znova zálohovať, nájdete ju v časti Nastavenia -> Zabezpečenie."
   },
-  "endOfFlowMessage7": {
-    "message": "Ak budete mať nejaké otázky alebo niečo zaujímavé, pošlite email na support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask nemôže obnoviť vašu seed frázu. Zistiť viac."
   },
@@ -391,9 +385,6 @@
   },
   "fast": {
     "message": "Rýchle"
-  },
-  "faster": {
-    "message": "Rýchlejšie"
   },
   "fiat": {
     "message": "FIAT",
@@ -501,9 +492,6 @@
   "importWallet": {
     "message": "Importovať Peňaženku"
   },
-  "importYourExisting": {
-    "message": "Importujte svoju existujúcu peňaženku pomocou 12-slovnej seed frázy"
-  },
   "imported": {
     "message": "Importováno",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -562,9 +550,6 @@
   },
   "links": {
     "message": "Odkazy"
-  },
-  "liveGasPricePredictions": {
-    "message": "Predpoveď cien GAS naživo"
   },
   "loadMore": {
     "message": "Načítať viac"
@@ -753,15 +738,6 @@
   "privateNetwork": {
     "message": "Soukromá síť"
   },
-  "protectYourKeys": {
-    "message": "Chráňte si svoje kľúče!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Pri seed fráze buďte opatrní – vyskytli sa správy o webových stránkach, ktoré sa snažia napodobniť MetaMask. MetaMask nikdy nebude žiadať vašu seed frázu!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Držte svoju frázu v bezpečí. Ak zbadáte niečo podozrivé alebo si nie ste istí webom, pošlite email na adresu support@metamask.io"
-  },
   "queue": {
     "message": "Poradie"
   },
@@ -879,9 +855,6 @@
   "secretBackupPhraseWarning": {
     "message": "UPOZORNENIE: Nikdy nezverejňujte svoju backup frázu. Každý, kto má túto frázu, môže navždy vziať váš Ether."
   },
-  "secretPhrase": {
-    "message": "Zadejte svých 12 slov tajné fráze k obnovení trezoru."
-  },
   "securityAndPrivacy": {
     "message": "Bezpečnosť a súkromie"
   },
@@ -903,17 +876,11 @@
   "selectAnAccountHelp": {
     "message": "Vyberte účet, ktorý chcete zobraziť v MetaMask"
   },
-  "selectCurrency": {
-    "message": "Vybrat měnu"
-  },
   "selectEachPhrase": {
     "message": "Vyberte každú frázu, aby ste sa uistili, že je správna."
   },
   "selectHdPath": {
     "message": "Vyberte cestu HD"
-  },
-  "selectLocale": {
-    "message": "Vybrať miestne nastavenia"
   },
   "selectPathHelp": {
     "message": "Ak nevidíte svoje existujúce účty v Hlavnej knihe dole, skúste prepnúť cesty na „Odkaz (MEW/MyCrypto)“"
@@ -926,9 +893,6 @@
   },
   "sendAmount": {
     "message": "Poslať sumu"
-  },
-  "sendETH": {
-    "message": "Odeslat ETH"
   },
   "sendTokens": {
     "message": "Odeslat tokeny"
@@ -980,9 +944,6 @@
   },
   "slow": {
     "message": "Pomalé"
-  },
-  "slower": {
-    "message": "Pomalší"
   },
   "somethingWentWrong": {
     "message": "Och! Niečo zlyhalo."
@@ -1122,9 +1083,6 @@
   "transactionSubmitted": {
     "message": "Transakcia bola odoslaná s poplatkom za GAS z  $1 na $2."
   },
-  "transactionTime": {
-    "message": "Čas transakcie"
-  },
   "transactionUpdated": {
     "message": "Transakcia bola aktualizovaná na $2."
   },
@@ -1227,9 +1185,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Vaša súkromná seed fráza"
-  },
-  "yourSigRequested": {
-    "message": "Je vyžadován váš podpis"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Nulová cena za GAS pri zrýchlení"

@@ -1,33 +1,23 @@
-import { connect } from 'react-redux'
-import { compose } from 'redux'
-import { multiplyCurrencies } from '../../../../helpers/utils/conversion-util'
-import withModalProps from '../../../../helpers/higher-order-components/with-modal-props'
-import { showModal, createCancelTransaction } from '../../../../store/actions'
-import { getHexGasTotal } from '../../../../helpers/utils/confirm-tx.util'
-import { addHexPrefix } from '../../../../../../app/scripts/lib/util'
-import CancelTransaction from './cancel-transaction.component'
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import withModalProps from '../../../../helpers/higher-order-components/with-modal-props';
+import { showModal, createCancelTransaction } from '../../../../store/actions';
+import CancelTransaction from './cancel-transaction.component';
 
 const mapStateToProps = (state, ownProps) => {
-  const { metamask } = state
-  const { transactionId, originalGasPrice } = ownProps
-  const { currentNetworkTxList } = metamask
+  const { metamask } = state;
+  const {
+    transactionId,
+    originalGasPrice,
+    newGasFee,
+    defaultNewGasPrice,
+    gasLimit,
+  } = ownProps;
+  const { currentNetworkTxList } = metamask;
   const transaction = currentNetworkTxList.find(
     ({ id }) => id === transactionId,
-  )
-  const transactionStatus = transaction ? transaction.status : ''
-
-  const defaultNewGasPrice = addHexPrefix(
-    multiplyCurrencies(originalGasPrice, 1.1, {
-      toNumericBase: 'hex',
-      multiplicandBase: 16,
-      multiplierBase: 10,
-    }),
-  )
-
-  const newGasFee = getHexGasTotal({
-    gasPrice: defaultNewGasPrice,
-    gasLimit: '0x5208',
-  })
+  );
+  const transactionStatus = transaction ? transaction.status : '';
 
   return {
     transactionId,
@@ -35,34 +25,42 @@ const mapStateToProps = (state, ownProps) => {
     originalGasPrice,
     defaultNewGasPrice,
     newGasFee,
-  }
-}
+    gasLimit,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createCancelTransaction: (txId, customGasPrice) => {
-      return dispatch(createCancelTransaction(txId, customGasPrice))
+    createCancelTransaction: (txId, customGasPrice, customGasLimit) => {
+      return dispatch(
+        createCancelTransaction(txId, customGasPrice, customGasLimit),
+      );
     },
     showTransactionConfirmedModal: () =>
       dispatch(showModal({ name: 'TRANSACTION_CONFIRMED' })),
-  }
-}
+  };
+};
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
-  const { transactionId, defaultNewGasPrice, ...restStateProps } = stateProps
+  const {
+    transactionId,
+    defaultNewGasPrice,
+    gasLimit,
+    ...restStateProps
+  } = stateProps;
   // eslint-disable-next-line no-shadow
-  const { createCancelTransaction, ...restDispatchProps } = dispatchProps
+  const { createCancelTransaction, ...restDispatchProps } = dispatchProps;
 
   return {
     ...restStateProps,
     ...restDispatchProps,
     ...ownProps,
     createCancelTransaction: () =>
-      createCancelTransaction(transactionId, defaultNewGasPrice),
-  }
-}
+      createCancelTransaction(transactionId, defaultNewGasPrice, gasLimit),
+  };
+};
 
 export default compose(
   withModalProps,
   connect(mapStateToProps, mapDispatchToProps, mergeProps),
-)(CancelTransaction)
+)(CancelTransaction);

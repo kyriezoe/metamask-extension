@@ -1,74 +1,80 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import { useDispatch, useSelector } from 'react-redux'
-import classnames from 'classnames'
-import { useHistory } from 'react-router-dom'
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import classnames from 'classnames';
+import { useHistory } from 'react-router-dom';
 
-import Identicon from '../../ui/identicon'
-import { I18nContext } from '../../../contexts/i18n'
+import Identicon from '../../ui/identicon';
+import { I18nContext } from '../../../contexts/i18n';
 import {
   SEND_ROUTE,
   BUILD_QUOTE_ROUTE,
-} from '../../../helpers/constants/routes'
+} from '../../../helpers/constants/routes';
 import {
   useMetricEvent,
   useNewMetricEvent,
-} from '../../../hooks/useMetricEvent'
-import { useSwapsEthToken } from '../../../hooks/useSwapsEthToken'
-import Tooltip from '../../ui/tooltip'
-import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display'
-import { PRIMARY, SECONDARY } from '../../../helpers/constants/common'
-import { showModal } from '../../../store/actions'
+} from '../../../hooks/useMetricEvent';
+import Tooltip from '../../ui/tooltip';
+import UserPreferencedCurrencyDisplay from '../user-preferenced-currency-display';
+import { PRIMARY, SECONDARY } from '../../../helpers/constants/common';
+import { showModal } from '../../../store/actions';
 import {
   isBalanceCached,
   getSelectedAccount,
   getShouldShowFiat,
-  getCurrentNetworkId,
+  getIsMainnet,
+  getIsTestnet,
   getCurrentKeyring,
-} from '../../../selectors/selectors'
-import SwapIcon from '../../ui/icon/swap-icon.component'
-import BuyIcon from '../../ui/icon/overview-buy-icon.component'
-import SendIcon from '../../ui/icon/overview-send-icon.component'
+  getSwapsDefaultToken,
+  getIsSwapsChain,
+  getNativeCurrencyImage,
+} from '../../../selectors/selectors';
+import SwapIcon from '../../ui/icon/swap-icon.component';
+import BuyIcon from '../../ui/icon/overview-buy-icon.component';
+import SendIcon from '../../ui/icon/overview-send-icon.component';
 import {
   getSwapsFeatureLiveness,
   setSwapsFromToken,
-} from '../../../ducks/swaps/swaps'
-import IconButton from '../../ui/icon-button'
-import { MAINNET_NETWORK_ID } from '../../../../../app/scripts/controllers/network/enums'
-import WalletOverview from './wallet-overview'
+} from '../../../ducks/swaps/swaps';
+import IconButton from '../../ui/icon-button';
+import WalletOverview from './wallet-overview';
 
 const EthOverview = ({ className }) => {
-  const dispatch = useDispatch()
-  const t = useContext(I18nContext)
+  const dispatch = useDispatch();
+  const t = useContext(I18nContext);
   const sendEvent = useMetricEvent({
     eventOpts: {
       category: 'Navigation',
       action: 'Home',
       name: 'Clicked Send: Eth',
     },
-  })
+  });
   const depositEvent = useMetricEvent({
     eventOpts: {
       category: 'Navigation',
       action: 'Home',
       name: 'Clicked Deposit',
     },
-  })
-  const history = useHistory()
-  const keyring = useSelector(getCurrentKeyring)
-  const usingHardwareWallet = keyring.type.search('Hardware') !== -1
-  const balanceIsCached = useSelector(isBalanceCached)
-  const showFiat = useSelector(getShouldShowFiat)
-  const selectedAccount = useSelector(getSelectedAccount)
-  const { balance } = selectedAccount
-  const networkId = useSelector(getCurrentNetworkId)
+  });
+  const history = useHistory();
+  const keyring = useSelector(getCurrentKeyring);
+  const usingHardwareWallet = keyring.type.search('Hardware') !== -1;
+  const balanceIsCached = useSelector(isBalanceCached);
+  const showFiat = useSelector(getShouldShowFiat);
+  const selectedAccount = useSelector(getSelectedAccount);
+  const { balance } = selectedAccount;
+  const isMainnetChain = useSelector(getIsMainnet);
+  const isTestnetChain = useSelector(getIsTestnet);
+  const isSwapsChain = useSelector(getIsSwapsChain);
+  const primaryTokenImage = useSelector(getNativeCurrencyImage);
+
   const enteredSwapsEvent = useNewMetricEvent({
     event: 'Swaps Opened',
     properties: { source: 'Main View', active_currency: 'ETH' },
     category: 'swaps',
-  })
-  const swapsEnabled = useSelector(getSwapsFeatureLiveness)
-  const swapsEthToken = useSwapsEthToken()
+  });
+  const swapsEnabled = useSelector(getSwapsFeatureLiveness);
+  const defaultSwapsToken = useSelector(getSwapsDefaultToken);
 
   return (
     <WalletOverview
@@ -115,10 +121,11 @@ const EthOverview = ({ className }) => {
           <IconButton
             className="eth-overview__button"
             Icon={BuyIcon}
+            disabled={!(isMainnetChain || isTestnetChain)}
             label={t('buy')}
             onClick={() => {
-              depositEvent()
-              dispatch(showModal({ name: 'DEPOSIT_ETHER' }))
+              depositEvent();
+              dispatch(showModal({ name: 'DEPOSIT_ETHER' }));
             }}
           />
           <IconButton
@@ -127,23 +134,23 @@ const EthOverview = ({ className }) => {
             Icon={SendIcon}
             label={t('send')}
             onClick={() => {
-              sendEvent()
-              history.push(SEND_ROUTE)
+              sendEvent();
+              history.push(SEND_ROUTE);
             }}
           />
           {swapsEnabled ? (
             <IconButton
               className="eth-overview__button"
-              disabled={networkId !== MAINNET_NETWORK_ID}
+              disabled={!isSwapsChain}
               Icon={SwapIcon}
               onClick={() => {
-                if (networkId === MAINNET_NETWORK_ID) {
-                  enteredSwapsEvent()
-                  dispatch(setSwapsFromToken(swapsEthToken))
+                if (isSwapsChain) {
+                  enteredSwapsEvent();
+                  dispatch(setSwapsFromToken(defaultSwapsToken));
                   if (usingHardwareWallet) {
-                    global.platform.openExtensionInBrowser(BUILD_QUOTE_ROUTE)
+                    global.platform.openExtensionInBrowser(BUILD_QUOTE_ROUTE);
                   } else {
-                    history.push(BUILD_QUOTE_ROUTE)
+                    history.push(BUILD_QUOTE_ROUTE);
                   }
                 }
               }}
@@ -152,7 +159,7 @@ const EthOverview = ({ className }) => {
                 <Tooltip
                   title={t('onlyAvailableOnMainnet')}
                   position="bottom"
-                  disabled={networkId === '1'}
+                  disabled={isSwapsChain}
                 >
                   {contents}
                 </Tooltip>
@@ -162,17 +169,17 @@ const EthOverview = ({ className }) => {
         </>
       }
       className={className}
-      icon={<Identicon diameter={32} />}
+      icon={<Identicon diameter={32} image={primaryTokenImage} imageBorder />}
     />
-  )
-}
+  );
+};
 
 EthOverview.propTypes = {
   className: PropTypes.string,
-}
+};
 
 EthOverview.defaultProps = {
   className: undefined,
-}
+};
 
-export default EthOverview
+export default EthOverview;

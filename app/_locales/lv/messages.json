@@ -167,9 +167,6 @@
   "chainId": {
     "message": "Ķēdes ID"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Grafiks pieejams vienīgi Ethereum tīklos."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "MetaMask ir jāpalaiž pārlūkprogrammā Google Chrome, lai varētu pievienot aparatūras maku."
   },
@@ -353,9 +350,6 @@
   "endOfFlowMessage6": {
     "message": "Ja nepieciešams atkārtoti dublēt atkopšanas frāzi, varat to atrast, dodoties uz Iestatījumi -> Drošība."
   },
-  "endOfFlowMessage7": {
-    "message": "Ja jums rodas kādi jautājumi vai pamanāt ko aizdomīgu, rakstiet uz support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "MetaMask nevar atjaunot jūsu atkopšanas frāzi. Uzzināt vairāk."
   },
@@ -397,9 +391,6 @@
   },
   "fast": {
     "message": "Ātrs"
-  },
-  "faster": {
-    "message": "Ātrāk"
   },
   "fileImportFail": {
     "message": "Vai faila importēšanas iespēja nedarbojas? Klikšķiniet šeit!",
@@ -510,9 +501,6 @@
   "importWallet": {
     "message": "Importēt maku"
   },
-  "importYourExisting": {
-    "message": "Importējiet esošo maku, izmantojot 12 vārdu atkopšanas frāzi"
-  },
   "imported": {
     "message": "Importēts",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -574,9 +562,6 @@
   },
   "links": {
     "message": "Saites"
-  },
-  "liveGasPricePredictions": {
-    "message": "Reāllaika Gas cenu prognozes"
   },
   "loadMore": {
     "message": "Ielādēt vairāk"
@@ -780,15 +765,6 @@
   "privateNetwork": {
     "message": "Privātais tīkls"
   },
-  "protectYourKeys": {
-    "message": "Sargājiet savas atslēgas!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Rīkojieties uzmanīgi ar sēklas frāzi — saņemti ziņojumi par tīmekļa vietnēm, kas mēģina imitēt MetaMask. MetaMask nekad nelūgs norādīt sēklas frāzi."
-  },
-  "protectYourKeysMessage2": {
-    "message": "Glabājiet frāzi drošībā. Ja kaut kas šķiet aizdomīgs vai neesat pārliecināti par tīmekļa vietni, rakstiet e-pastu uz support@metamask.io"
-  },
   "queue": {
     "message": "Rinda"
   },
@@ -912,9 +888,6 @@
   "secretBackupPhraseWarning": {
     "message": "BRĪDINĀJUMS! Nekādā gadījumā neizpaudiet savu rezerves frāzi. Ikviens, kam pieejama šī frāze, var uz visiem laikiem pārņemt jūsu Ether."
   },
-  "secretPhrase": {
-    "message": "Ievadiet šeit slepeno divpadsmit vārdu frāzi, lai atjaunotu savu seifu."
-  },
   "securityAndPrivacy": {
     "message": "Drošība un konfidencialitāte"
   },
@@ -936,17 +909,11 @@
   "selectAnAccountHelp": {
     "message": "Atlasiet kontu, ko skatīt MetaMask"
   },
-  "selectCurrency": {
-    "message": "Atlasiet valūtu"
-  },
   "selectEachPhrase": {
     "message": "Lūdzu, atlasiet katru frāzi, lai pārliecinātos par tās pareizību."
   },
   "selectHdPath": {
     "message": "Atlasīt HD ceļu"
-  },
-  "selectLocale": {
-    "message": "Izvēlieties lokalizāciju"
   },
   "selectPathHelp": {
     "message": "Ja zemāk neredzat savus esošos žurnāla kontus, mēģiniet pārslēgt ceļus uz \"Legacy (MEW / MyCrypto)\""
@@ -959,9 +926,6 @@
   },
   "sendAmount": {
     "message": "Nosūtītā summa"
-  },
-  "sendETH": {
-    "message": "Sūtīt ETH"
   },
   "sendTokens": {
     "message": "Nosūtīt marķierus"
@@ -1013,9 +977,6 @@
   },
   "slow": {
     "message": "Lēns"
-  },
-  "slower": {
-    "message": "Lēnāk"
   },
   "somethingWentWrong": {
     "message": "Ak vai! Radās problēma."
@@ -1161,9 +1122,6 @@
   "transactionSubmitted": {
     "message": "Darījums iesniegts ar maksu par Gas $1 pie $2."
   },
-  "transactionTime": {
-    "message": "Darījuma ilgums"
-  },
   "transactionUpdated": {
     "message": "Darījums atjaunināts $2."
   },
@@ -1266,9 +1224,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Jūsu privātā atkopšanas frāze"
-  },
-  "yourSigRequested": {
-    "message": "Nepieciešams jūsu paraksts"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Gas nulles cena pie paātrinājuma"

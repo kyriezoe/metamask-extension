@@ -561,9 +561,6 @@
   "searchTokens": {
     "message": "Rechèch Tokens"
   },
-  "secretPhrase": {
-    "message": "Antre fraz sekrè douz mo ou a pou w restore kòf ou a."
-  },
   "seedPhraseReq": {
     "message": "Seed fraz yo se 12 long mo"
   },
@@ -573,14 +570,8 @@
   "selectAnAccountHelp": {
     "message": "Chwazi kont pou wè nan MetaMask"
   },
-  "selectCurrency": {
-    "message": "Chwazi Lajan"
-  },
   "selectHdPath": {
     "message": "Chwazi chemen HD"
-  },
-  "selectLocale": {
-    "message": "Chwazi Lokasyon"
   },
   "selectPathHelp": {
     "message": "Si ou pa wè kont Ledger ou te genyen an anba a, eseye chanje chemen an \"Eritaj (MEW / MyCrypto)\""
@@ -590,9 +581,6 @@
   },
   "send": {
     "message": "Voye"
-  },
-  "sendETH": {
-    "message": "Voye ETH"
   },
   "sendTokens": {
     "message": "Voye Tokens"
@@ -780,8 +768,5 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Seed fraz prive ou a"
-  },
-  "yourSigRequested": {
-    "message": "Yo mande siyati ou"
   }
 }

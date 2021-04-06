@@ -366,23 +366,14 @@
   "searchTokens": {
     "message": "Jeton ara"
   },
-  "secretPhrase": {
-    "message": "Kasanızı geri getirmek için gizli 12 kelimelik ifadenizi giriniz."
-  },
   "seedPhraseReq": {
     "message": "Kaynak ifadeleri 12 kelimedir."
-  },
-  "selectCurrency": {
-    "message": "Döviz Seç"
   },
   "selectType": {
     "message": "Tip Seç"
   },
   "send": {
     "message": "Gönder"
-  },
-  "sendETH": {
-    "message": "ETH Gönder"
   },
   "sendTokens": {
     "message": "Jeton Gönder"
@@ -486,8 +477,5 @@
   },
   "youSign": {
     "message": "İmzalıyorsunuz"
-  },
-  "yourSigRequested": {
-    "message": "İmzanız isteniyor"
   }
 }

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import MetaFoxLogo from '../../../components/ui/metafox-logo'
-import PageContainerFooter from '../../../components/ui/page-container/page-container-footer'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import MetaFoxLogo from '../../../components/ui/metafox-logo';
+import PageContainerFooter from '../../../components/ui/page-container/page-container-footer';
 
 export default class MetaMetricsOptIn extends Component {
   static propTypes = {
@@ -10,22 +10,22 @@ export default class MetaMetricsOptIn extends Component {
     nextRoute: PropTypes.string,
     firstTimeSelectionMetaMetricsName: PropTypes.string,
     participateInMetaMetrics: PropTypes.bool,
-  }
+  };
 
   static contextTypes = {
     metricsEvent: PropTypes.func,
     t: PropTypes.func,
-  }
+  };
 
   render() {
-    const { metricsEvent, t } = this.context
+    const { metricsEvent, t } = this.context;
     const {
       nextRoute,
       history,
       setParticipateInMetaMetrics,
       firstTimeSelectionMetaMetricsName,
       participateInMetaMetrics,
-    } = this.props
+    } = this.props;
 
     return (
       <div className="metametrics-opt-in">
@@ -102,10 +102,13 @@ export default class MetaMetricsOptIn extends Component {
           <div className="metametrics-opt-in__footer">
             <PageContainerFooter
               onCancel={async () => {
-                await setParticipateInMetaMetrics(false)
+                await setParticipateInMetaMetrics(false);
 
                 try {
-                  if (participateInMetaMetrics === true) {
+                  if (
+                    participateInMetaMetrics === null ||
+                    participateInMetaMetrics === true
+                  ) {
                     await metricsEvent({
                       eventOpts: {
                         category: 'Onboarding',
@@ -113,10 +116,11 @@ export default class MetaMetricsOptIn extends Component {
                         name: 'Metrics Opt Out',
                       },
                       isOptIn: true,
-                    })
+                      flushImmediately: true,
+                    });
                   }
                 } finally {
-                  history.push(nextRoute)
+                  history.push(nextRoute);
                 }
               }}
               cancelText={t('noThanks')}
@@ -124,10 +128,13 @@ export default class MetaMetricsOptIn extends Component {
               onSubmit={async () => {
                 const [, metaMetricsId] = await setParticipateInMetaMetrics(
                   true,
-                )
+                );
                 try {
-                  const metrics = []
-                  if (participateInMetaMetrics === false) {
+                  const metrics = [];
+                  if (
+                    participateInMetaMetrics === null ||
+                    participateInMetaMetrics === false
+                  ) {
                     metrics.push(
                       metricsEvent({
                         eventOpts: {
@@ -136,8 +143,9 @@ export default class MetaMetricsOptIn extends Component {
                           name: 'Metrics Opt In',
                         },
                         isOptIn: true,
+                        flushImmediately: true,
                       }),
-                    )
+                    );
                   }
                   metrics.push(
                     metricsEvent({
@@ -148,11 +156,12 @@ export default class MetaMetricsOptIn extends Component {
                       },
                       isOptIn: true,
                       metaMetricsId,
+                      flushImmediately: true,
                     }),
-                  )
-                  await Promise.all(metrics)
+                  );
+                  await Promise.all(metrics);
                 } finally {
-                  history.push(nextRoute)
+                  history.push(nextRoute);
                 }
               }}
               submitText={t('affirmAgree')}
@@ -174,6 +183,6 @@ export default class MetaMetricsOptIn extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }

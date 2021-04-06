@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import SendRowWrapper from '../send-row-wrapper'
-import Identicon from '../../../../components/ui/identicon/identicon.component'
-import TokenBalance from '../../../../components/ui/token-balance'
-import UserPreferencedCurrencyDisplay from '../../../../components/app/user-preferenced-currency-display'
-import { PRIMARY } from '../../../../helpers/constants/common'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import SendRowWrapper from '../send-row-wrapper';
+import Identicon from '../../../../components/ui/identicon/identicon.component';
+import TokenBalance from '../../../../components/ui/token-balance';
+import UserPreferencedCurrencyDisplay from '../../../../components/app/user-preferenced-currency-display';
+import { ERC20, PRIMARY } from '../../../../helpers/constants/common';
 
 export default class SendAssetRow extends Component {
   static propTypes = {
@@ -19,20 +19,22 @@ export default class SendAssetRow extends Component {
     selectedAddress: PropTypes.string.isRequired,
     sendTokenAddress: PropTypes.string,
     setSendToken: PropTypes.func.isRequired,
-  }
+    nativeCurrency: PropTypes.string,
+    nativeCurrencyImage: PropTypes.string,
+  };
 
   static contextTypes = {
     t: PropTypes.func,
     metricsEvent: PropTypes.func,
-  }
+  };
 
   state = {
     isShowingDropdown: false,
-  }
+  };
 
-  openDropdown = () => this.setState({ isShowingDropdown: true })
+  openDropdown = () => this.setState({ isShowingDropdown: true });
 
-  closeDropdown = () => this.setState({ isShowingDropdown: false })
+  closeDropdown = () => this.setState({ isShowingDropdown: false });
 
   selectToken = (token) => {
     this.setState(
@@ -47,16 +49,16 @@ export default class SendAssetRow extends Component {
             name: 'User clicks "Assets" dropdown',
           },
           customVariables: {
-            assetSelected: token ? 'ERC20' : 'ETH',
+            assetSelected: token ? ERC20 : this.props.nativeCurrency,
           },
-        })
-        this.props.setSendToken(token)
+        });
+        this.props.setSendToken(token);
       },
-    )
-  }
+    );
+  };
 
   render() {
-    const { t } = this.context
+    const { t } = this.context;
 
     return (
       <SendRowWrapper label={`${t('asset')}:`}>
@@ -65,22 +67,22 @@ export default class SendAssetRow extends Component {
           {this.props.tokens.length > 0 ? this.renderAssetDropdown() : null}
         </div>
       </SendRowWrapper>
-    )
+    );
   }
 
   renderSendToken() {
-    const { sendTokenAddress } = this.props
+    const { sendTokenAddress } = this.props;
     const token = this.props.tokens.find(
       ({ address }) => address === sendTokenAddress,
-    )
+    );
     return (
       <div
         className="send-v2__asset-dropdown__input-wrapper"
         onClick={this.openDropdown}
       >
-        {token ? this.renderAsset(token) : this.renderEth()}
+        {token ? this.renderAsset(token) : this.renderNativeCurrency()}
       </div>
-    )
+    );
   }
 
   renderAssetDropdown() {
@@ -92,21 +94,26 @@ export default class SendAssetRow extends Component {
             onClick={this.closeDropdown}
           />
           <div className="send-v2__asset-dropdown__list">
-            {this.renderEth(true)}
+            {this.renderNativeCurrency(true)}
             {this.props.tokens.map((token) => this.renderAsset(token, true))}
           </div>
         </div>
       )
-    )
+    );
   }
 
-  renderEth(insideDropdown = false) {
-    const { t } = this.context
-    const { accounts, selectedAddress } = this.props
+  renderNativeCurrency(insideDropdown = false) {
+    const { t } = this.context;
+    const {
+      accounts,
+      selectedAddress,
+      nativeCurrency,
+      nativeCurrencyImage,
+    } = this.props;
 
     const balanceValue = accounts[selectedAddress]
       ? accounts[selectedAddress].balance
-      : ''
+      : '';
 
     return (
       <div
@@ -118,10 +125,16 @@ export default class SendAssetRow extends Component {
         onClick={() => this.selectToken()}
       >
         <div className="send-v2__asset-dropdown__asset-icon">
-          <Identicon diameter={36} />
+          <Identicon
+            diameter={36}
+            image={nativeCurrencyImage}
+            address={nativeCurrency}
+          />
         </div>
         <div className="send-v2__asset-dropdown__asset-data">
-          <div className="send-v2__asset-dropdown__symbol">ETH</div>
+          <div className="send-v2__asset-dropdown__symbol">
+            {nativeCurrency}
+          </div>
           <div className="send-v2__asset-dropdown__name">
             <span className="send-v2__asset-dropdown__name__label">
               {`${t('balance')}:`}
@@ -133,15 +146,15 @@ export default class SendAssetRow extends Component {
           </div>
         </div>
         {!insideDropdown && this.props.tokens.length > 0 && (
-          <i className="fa fa-caret-down fa-lg simple-dropdown__caret" />
+          <i className="fa fa-caret-down fa-lg send-v2__asset-dropdown__caret" />
         )}
       </div>
-    )
+    );
   }
 
   renderAsset(token, insideDropdown = false) {
-    const { address, symbol } = token
-    const { t } = this.context
+    const { address, symbol } = token;
+    const { t } = this.context;
 
     return (
       <div
@@ -162,9 +175,9 @@ export default class SendAssetRow extends Component {
           </div>
         </div>
         {!insideDropdown && (
-          <i className="fa fa-caret-down fa-lg simple-dropdown__caret" />
+          <i className="fa fa-caret-down fa-lg send-v2__asset-dropdown__caret" />
         )}
       </div>
-    )
+    );
   }
 }

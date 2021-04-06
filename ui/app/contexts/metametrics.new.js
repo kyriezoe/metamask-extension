@@ -4,57 +4,78 @@
  * metrics system. This file implements Segment analytics tracking.
  */
 import React, {
-  useRef,
   Component,
   createContext,
   useEffect,
-  useMemo,
-} from 'react'
-import { useSelector } from 'react-redux'
-import PropTypes from 'prop-types'
-import { useLocation, matchPath, useRouteMatch } from 'react-router-dom'
-import { captureException, captureMessage } from '@sentry/browser'
+  useRef,
+  useCallback,
+} from 'react';
+import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import { matchPath, useLocation, useRouteMatch } from 'react-router-dom';
+import { captureException, captureMessage } from '@sentry/browser';
 
-import { omit } from 'lodash'
+import { omit } from 'lodash';
+import { getEnvironmentType } from '../../../app/scripts/lib/util';
+import { PATH_NAME_MAP } from '../helpers/constants/routes';
+import { txDataSelector } from '../selectors';
 
-import { getEnvironmentType } from '../../../app/scripts/lib/util'
-import { PATH_NAME_MAP } from '../helpers/constants/routes'
-import { getCurrentLocale } from '../ducks/metamask/metamask'
-import {
-  getCurrentChainId,
-  getMetricsNetworkIdentifier,
-  txDataSelector,
-} from '../selectors'
-import {
-  getTrackMetaMetricsEvent,
-  METAMETRICS_ANONYMOUS_ID,
-  segment,
-} from '../../../shared/modules/metametrics'
+import { trackMetaMetricsEvent, trackMetaMetricsPage } from '../store/actions';
 
+// type imports
+/**
+ * @typedef {import('../../../shared/constants/metametrics').MetaMetricsEventPayload} MetaMetricsEventPayload
+ * @typedef {import('../../../shared/constants/metametrics').MetaMetricsEventOptions} MetaMetricsEventOptions
+ * @typedef {import('../../../shared/constants/metametrics').MetaMetricsPageObject} MetaMetricsPageObject
+ * @typedef {import('../../../shared/constants/metametrics').MetaMetricsReferrerObject} MetaMetricsReferrerObject
+ */
+
+// types
+/**
+ * @typedef {Omit<MetaMetricsEventPayload, 'environmentType' | 'page' | 'referrer'>} UIMetricsEventPayload
+ */
+/**
+ * @typedef {(
+ *  payload: UIMetricsEventPayload,
+ *  options: MetaMetricsEventOptions
+ * ) => Promise<void>} UITrackEventMethod
+ */
+
+/**
+ * @type {React.Context<UITrackEventMethod>}
+ */
 export const MetaMetricsContext = createContext(() => {
   captureException(
     Error(
       `MetaMetrics context function was called from a react node that is not a descendant of a MetaMetrics context provider`,
     ),
-  )
-})
+  );
+});
 
-const PATHS_TO_CHECK = Object.keys(PATH_NAME_MAP)
+const PATHS_TO_CHECK = Object.keys(PATH_NAME_MAP);
 
+/**
+ * Returns the current page if it matches out route map, as well as the origin
+ * if there is a confirmation that was triggered by a dapp
+ * @returns {{
+ *  page?: MetaMetricsPageObject
+ *  referrer?: MetaMetricsReferrerObject
+ * }}
+ */
 function useSegmentContext() {
   const match = useRouteMatch({
     path: PATHS_TO_CHECK,
     exact: true,
     strict: true,
-  })
-  const txData = useSelector(txDataSelector) || {}
-  const confirmTransactionOrigin = txData.origin
+  });
+  const txData = useSelector(txDataSelector) || {};
+  const confirmTransactionOrigin = txData.origin;
 
   const referrer = confirmTransactionOrigin
     ? {
         url: confirmTransactionOrigin,
       }
-    : undefined
+    : undefined;
 
   const page = match
     ? {
@@ -62,63 +83,37 @@ function useSegmentContext() {
         title: PATH_NAME_MAP[match.path],
         url: match.path,
       }
-    : undefined
+    : undefined;
 
   return {
     page,
     referrer,
-  }
+  };
 }
 
 export function MetaMetricsProvider({ children }) {
-  const metaMetricsId = useSelector((state) => state.metamask.metaMetricsId)
-  const participateInMetaMetrics = useSelector(
-    (state) => state.metamask.participateInMetaMetrics,
-  )
-  const metaMetricsSendCount = useSelector(
-    (state) => state.metamask.metaMetricsSendCount,
-  )
-  const locale = useSelector(getCurrentLocale)
-  const location = useLocation()
-  const context = useSegmentContext()
-  const network = useSelector(getMetricsNetworkIdentifier)
-  const chainId = useSelector(getCurrentChainId)
-  // Temporary until the background controller refactor merges:
-  const baseVersion = global.platform.getVersion()
-  const version =
-    process.env.METAMASK_ENVIRONMENT === 'production'
-      ? baseVersion
-      : `${baseVersion}-${process.env.METAMASK_ENVIRONMENT}`
+  const location = useLocation();
+  const context = useSegmentContext();
 
   /**
-   * track a metametrics event
-   *
-   * @param {import('../../../shared/modules/metametrics').MetaMetricsEventPayload} payload - payload for event
-   * @returns undefined
+   * @type {UITrackEventMethod}
    */
-  const trackEvent = useMemo(() => {
-    return getTrackMetaMetricsEvent(global.platform.getVersion(), () => ({
-      context,
-      locale: locale.replace('_', '-'),
-      environmentType: getEnvironmentType(),
-      chainId,
-      network,
-      participateInMetaMetrics,
-      metaMetricsId,
-      metaMetricsSendCount,
-    }))
-  }, [
-    network,
-    participateInMetaMetrics,
-    locale,
-    metaMetricsId,
-    metaMetricsSendCount,
-    chainId,
-    context,
-  ])
+  const trackEvent = useCallback(
+    (payload, options) => {
+      trackMetaMetricsEvent(
+        {
+          ...payload,
+          environmentType: getEnvironmentType(),
+          ...context,
+        },
+        options,
+      );
+    },
+    [context],
+  );
 
   // Used to prevent double tracking page calls
-  const previousMatch = useRef()
+  const previousMatch = useRef();
 
   /**
    * Anytime the location changes, track a page change with segment.
@@ -127,108 +122,88 @@ export function MetaMetricsProvider({ children }) {
    * which page the user is on and their navigation path.
    */
   useEffect(() => {
-    const environmentType = getEnvironmentType()
-    if (
-      (participateInMetaMetrics === null &&
-        location.pathname.startsWith('/initialize')) ||
-      participateInMetaMetrics
+    const environmentType = getEnvironmentType();
+    const match = matchPath(location.pathname, {
+      path: PATHS_TO_CHECK,
+      exact: true,
+      strict: true,
+    });
+    // Start by checking for a missing match route. If this falls through to
+    // the else if, then we know we have a matched route for tracking.
+    if (!match) {
+      captureMessage(`Segment page tracking found unmatched route`, {
+        extra: {
+          previousMatch,
+          currentPath: location.pathname,
+        },
+      });
+    } else if (
+      previousMatch.current !== match.path &&
+      !(
+        environmentType === 'notification' &&
+        match.path === '/' &&
+        previousMatch.current === undefined
+      )
     ) {
-      // Events that happen during initialization before the user opts into
-      // MetaMetrics will be anonymous
-      const idTrait = metaMetricsId ? 'userId' : 'anonymousId'
-      const idValue = metaMetricsId ?? METAMETRICS_ANONYMOUS_ID
-      const match = matchPath(location.pathname, {
-        path: PATHS_TO_CHECK,
-        exact: true,
-        strict: true,
-      })
-      // Start by checking for a missing match route. If this falls through to
-      // the else if, then we know we have a matched route for tracking.
-      if (!match) {
-        captureMessage(`Segment page tracking found unmatched route`, {
-          extra: {
-            previousMatch,
-            currentPath: location.pathname,
-          },
-        })
-      } else if (
-        previousMatch.current !== match.path &&
-        !(
-          environmentType === 'notification' &&
-          match.path === '/' &&
-          previousMatch.current === undefined
-        )
-      ) {
-        // When a notification window is open by a Dapp we do not want to track
-        // the initial home route load that can sometimes happen. To handle
-        // this we keep track of the previousMatch, and we skip the event track
-        // in the event that we are dealing with the initial load of the
-        // homepage
-        const { path, params } = match
-        const name = PATH_NAME_MAP[path]
-        segment.page({
-          [idTrait]: idValue,
+      // When a notification window is open by a Dapp we do not want to track
+      // the initial home route load that can sometimes happen. To handle
+      // this we keep track of the previousMatch, and we skip the event track
+      // in the event that we are dealing with the initial load of the
+      // homepage
+      const { path, params } = match;
+      const name = PATH_NAME_MAP[path];
+      trackMetaMetricsPage(
+        {
           name,
-          properties: {
-            // We do not want to send addresses or accounts in any events
-            // Some routes include these as params.
-            params: omit(params, ['account', 'address']),
-            locale: locale.replace('_', '-'),
-            network,
-            environment_type: environmentType,
-          },
-          context: {
-            ...context,
-            version,
-          },
-        })
-      }
-      previousMatch.current = match?.path
+          // We do not want to send addresses or accounts in any events
+          // Some routes include these as params.
+          params: omit(params, ['account', 'address']),
+          environmentType,
+          page: context.page,
+          referrer: context.referrer,
+        },
+        {
+          isOptInPath: location.pathname.startsWith('/initialize'),
+        },
+      );
     }
-  }, [
-    location,
-    version,
-    locale,
-    context,
-    network,
-    metaMetricsId,
-    participateInMetaMetrics,
-  ])
+    previousMatch.current = match?.path;
+  }, [location, context]);
 
   return (
     <MetaMetricsContext.Provider value={trackEvent}>
       {children}
     </MetaMetricsContext.Provider>
-  )
+  );
 }
 
-MetaMetricsProvider.propTypes = { children: PropTypes.node }
+MetaMetricsProvider.propTypes = { children: PropTypes.node };
 
 export class LegacyMetaMetricsProvider extends Component {
   static propTypes = {
     children: PropTypes.node,
-  }
+  };
 
   static defaultProps = {
     children: undefined,
-  }
+  };
 
-  static contextType = MetaMetricsContext
+  static contextType = MetaMetricsContext;
 
   static childContextTypes = {
     // This has to be different than the type name for the old metametrics file
     // using the same name would result in whichever was lower in the tree to be
     // used.
     trackEvent: PropTypes.func,
-  }
+  };
 
   getChildContext() {
     return {
       trackEvent: this.context,
-    }
+    };
   }
 
   render() {
-    return this.props.children
+    return this.props.children;
   }
 }

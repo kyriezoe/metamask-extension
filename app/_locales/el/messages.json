@@ -164,9 +164,6 @@
   "chainId": {
     "message": "Αναγνωριστικό Αλυσίδας"
   },
-  "chartOnlyAvailableEth": {
-    "message": "Το διάγραμμα είναι διαθέσιμο μόνο σε δίκτυα Ethereum."
-  },
   "chromeRequiredForHardwareWallets": {
     "message": "Θα πρέπει να χρησιμοποιήσετε το MetaMask στο Google Chrome για να συνδεθείτε στο Πορτοφόλι Υλικού."
   },
@@ -350,9 +347,6 @@
   "endOfFlowMessage6": {
     "message": "Αν χρειάζεται να δημιουργήσετε ξανά αντίγραφο της φράσης επαναφοράς σας, μπορείτε να την βρείτε στη Ρυθμίσεις -> Ασφάλεια."
   },
-  "endOfFlowMessage7": {
-    "message": "Εάν έχετε οποιαδήποτε ερώτηση ή αντιληφθείτε κάτι ύποπτο στείλτε μας email στο support@metamask.io."
-  },
   "endOfFlowMessage8": {
     "message": "Το MetaMask δεν μπορεί να ανακτήσει τη φράση φύτρου σας. Μάθετε περισσότερα."
   },
@@ -394,9 +388,6 @@
   },
   "fast": {
     "message": "Γρήγορα"
-  },
-  "faster": {
-    "message": "Πιο γρήγορα"
   },
   "fiat": {
     "message": "Εντολή",
@@ -511,9 +502,6 @@
   "importWallet": {
     "message": "Εισαγωγή Πορτοφολιού"
   },
-  "importYourExisting": {
-    "message": "Εισαγάγετε το υπάρχον πορτοφόλι σας χρησιμοποιώντας μια φράση φύτρου 12 λέξεων"
-  },
   "imported": {
     "message": "Έγινε εισαγωγή",
     "description": "status showing that an account has been fully loaded into the keyring"
@@ -575,9 +563,6 @@
   },
   "links": {
     "message": "Σύνδεσμοι"
-  },
-  "liveGasPricePredictions": {
-    "message": "Ζωντανές Προβλέψεις Τιμής Καυσίμου"
   },
   "loadMore": {
     "message": "Φόρτωση Περισσότερων"
@@ -781,15 +766,6 @@
   "privateNetwork": {
     "message": "Ιδιωτικό Δίκτυο"
   },
-  "protectYourKeys": {
-    "message": "Προστατεύστε τα Κλειδιά Σας!"
-  },
-  "protectYourKeysMessage1": {
-    "message": "Να προσέχετε με τη φάση σπόρου. Υπάρχουν αναφορές για ιστότοπους που προσπαθούν να προσποιηθούν ότι είναι το MetaTask. Το MetaTask δεν θα σας ρωτήσει ποτέ για τη φάση σπόρου!"
-  },
-  "protectYourKeysMessage2": {
-    "message": "Κρατήστε τη φράση σας ασφαλή. Αν δείτε κάτι ύποπτο ή δεν είστε βέβαιοι για έναν ιστότοπο, στείλτε ένα email στο support@metamask.io"
-  },
   "queue": {
     "message": "Ουρά"
   },
@@ -913,9 +889,6 @@
   "secretBackupPhraseWarning": {
     "message": "ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Ποτέ μην αποκαλύπτετε την εφεδρική φράση. Όποιος έχει αυτή τη φράση μπορεί να πάρει τα Ether σας για πάντα."
   },
-  "secretPhrase": {
-    "message": "Εισαγάγετε εδώ τη μυστική φράση δώδεκα λέξεων για να επαναφέρετε το χρηματοκιβώτιό σας."
-  },
   "securityAndPrivacy": {
     "message": "Ασφάλεια και Απόρρητο"
   },
@@ -937,17 +910,11 @@
   "selectAnAccountHelp": {
     "message": "Επιλέξτε τον λογαριασμό για προβολή στο MetaMask"
   },
-  "selectCurrency": {
-    "message": "Επιλέξτε Νόμισμα"
-  },
   "selectEachPhrase": {
     "message": "Παρακαλούμε επιλέξτε κάθε φράση, για να βεβαιωθείτε ότι είναι σωστή."
   },
   "selectHdPath": {
     "message": "Επιλέξτε Διαδρομή HD"
-  },
-  "selectLocale": {
-    "message": "Επιλέξτε Τοπικές Ρυθμίσεις"
   },
   "selectPathHelp": {
     "message": "Εάν δεν βλέπετε τους υπάρχοντες λογαριασμούς σας Καθολικού παρακάτω, προσπαθήστε να αλλάξετε τις διαδρομές σε \"Legacy (MEW / MyCrypto)\""
@@ -960,9 +927,6 @@
   },
   "sendAmount": {
     "message": "Αποστολή Ποσού"
-  },
-  "sendETH": {
-    "message": "Στείλτε ETH"
   },
   "sendTokens": {
     "message": "Στείλτε Tokens"
@@ -1014,9 +978,6 @@
   },
   "slow": {
     "message": "Αργά"
-  },
-  "slower": {
-    "message": "Πιο αργά"
   },
   "somethingWentWrong": {
     "message": "Ουπς! Κάτι πήγε στραβά."
@@ -1159,9 +1120,6 @@
   "transactionSubmitted": {
     "message": "Η συναλλαγή στάλθηκε με τέλος gas του $1 σε $2."
   },
-  "transactionTime": {
-    "message": "Χρόνος Συναλλαγής"
-  },
   "transactionUpdated": {
     "message": "Η συναλλαγή ενημερώθηκε σε $2."
   },
@@ -1264,9 +1222,6 @@
   },
   "yourPrivateSeedPhrase": {
     "message": "Η προσωπική σας φράση φύτρου"
-  },
-  "yourSigRequested": {
-    "message": "Ζητείται η υπογραφή σας"
   },
   "zeroGasPriceOnSpeedUpError": {
     "message": "Μηδενική τιμή καυσίμου κατά την επιτάχυνση"

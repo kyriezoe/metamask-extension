@@ -1,17 +1,17 @@
-import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
-import classnames from 'classnames'
-import contractMap from 'eth-contract-metadata'
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import contractMap from '@metamask/contract-metadata';
 
-import { checksumAddress } from '../../../helpers/utils/util'
-import Jazzicon from '../jazzicon'
-import BlockieIdenticon from './blockieIdenticon'
+import { checksumAddress } from '../../../helpers/utils/util';
+import Jazzicon from '../jazzicon';
+import BlockieIdenticon from './blockieIdenticon';
 
 const getStyles = (diameter) => ({
   height: diameter,
   width: diameter,
   borderRadius: diameter / 2,
-})
+});
 
 export default class Identicon extends PureComponent {
   static propTypes = {
@@ -22,7 +22,8 @@ export default class Identicon extends PureComponent {
     image: PropTypes.string,
     useBlockie: PropTypes.bool,
     alt: PropTypes.string,
-  }
+    imageBorder: PropTypes.bool,
+  };
 
   static defaultProps = {
     addBorder: false,
@@ -32,23 +33,25 @@ export default class Identicon extends PureComponent {
     image: undefined,
     useBlockie: false,
     alt: '',
-  }
+  };
 
   renderImage() {
-    const { className, diameter, image, alt } = this.props
+    const { className, diameter, image, alt, imageBorder } = this.props;
 
     return (
       <img
-        className={classnames('identicon', className)}
+        className={classnames('identicon', className, {
+          'identicon__image-border': imageBorder,
+        })}
         src={image}
         style={getStyles(diameter)}
         alt={alt}
       />
-    )
+    );
   }
 
   renderJazzicon() {
-    const { address, className, diameter, alt } = this.props
+    const { address, className, diameter, alt } = this.props;
 
     return (
       <Jazzicon
@@ -58,11 +61,11 @@ export default class Identicon extends PureComponent {
         style={getStyles(diameter)}
         alt={alt}
       />
-    )
+    );
   }
 
   renderBlockie() {
-    const { address, className, diameter, alt } = this.props
+    const { address, className, diameter, alt } = this.props;
 
     return (
       <div
@@ -71,29 +74,21 @@ export default class Identicon extends PureComponent {
       >
         <BlockieIdenticon address={address} diameter={diameter} alt={alt} />
       </div>
-    )
+    );
   }
 
   render() {
-    const {
-      className,
-      address,
-      image,
-      diameter,
-      useBlockie,
-      addBorder,
-      alt,
-    } = this.props
+    const { address, image, useBlockie, addBorder, diameter } = this.props;
 
     if (image) {
-      return this.renderImage()
+      return this.renderImage();
     }
 
     if (address) {
-      const checksummedAddress = checksumAddress(address)
+      const checksummedAddress = checksumAddress(address);
 
       if (contractMap[checksummedAddress]?.logo) {
-        return this.renderJazzicon()
+        return this.renderJazzicon();
       }
 
       return (
@@ -102,16 +97,14 @@ export default class Identicon extends PureComponent {
         >
           {useBlockie ? this.renderBlockie() : this.renderJazzicon()}
         </div>
-      )
+      );
     }
 
     return (
-      <img
-        className={classnames('identicon__eth-logo', className)}
-        src="./images/eth_logo.svg"
+      <div
         style={getStyles(diameter)}
-        alt={alt}
-      />
-    )
+        className="identicon__image-border"
+      ></div>
+    );
   }
 }
